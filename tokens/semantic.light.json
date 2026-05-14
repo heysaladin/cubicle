@@ -1,0 +1,50 @@
+{
+  "background":            { "$value": "{color.white}",        "$type": "color" },
+  "foreground":            { "$value": "{color.neutral.950}",  "$type": "color" },
+
+  "primary":               { "$value": "{color.neutral.900}",  "$type": "color" },
+  "primary-foreground":    { "$value": "{color.neutral.50}",   "$type": "color" },
+
+  "secondary":             { "$value": "{color.neutral.100}",  "$type": "color" },
+  "secondary-foreground":  { "$value": "{color.neutral.900}",  "$type": "color" },
+
+  "muted":                 { "$value": "{color.neutral.100}",  "$type": "color" },
+  "muted-foreground":      { "$value": "{color.neutral.500}",  "$type": "color" },
+
+  "accent":                { "$value": "{color.neutral.100}",  "$type": "color" },
+  "accent-foreground":     { "$value": "{color.neutral.900}",  "$type": "color" },
+
+  "destructive":           { "$value": "{color.red.600}",      "$type": "color" },
+  "destructive-foreground":{ "$value": "{color.white}",        "$type": "color" },
+
+  "border":                { "$value": "{color.neutral.200}",  "$type": "color" },
+  "input":                 { "$value": "{color.neutral.200}",  "$type": "color" },
+  "ring":                  { "$value": "{color.neutral.950}",  "$type": "color" },
+
+  "card":                  { "$value": "{color.white}",        "$type": "color" },
+  "card-foreground":       { "$value": "{color.neutral.950}",  "$type": "color" },
+
+  "popover":               { "$value": "{color.white}",        "$type": "color" },
+  "popover-foreground":    { "$value": "{color.neutral.950}",  "$type": "color" },
+
+  "sidebar": {
+    "background":          { "$value": "{color.neutral.50}",   "$type": "color" },
+    "foreground":          { "$value": "{color.neutral.700}",  "$type": "color" },
+    "primary":             { "$value": "{color.neutral.900}",  "$type": "color" },
+    "primary-foreground":  { "$value": "{color.neutral.50}",   "$type": "color" },
+    "accent":              { "$value": "{color.neutral.100}",  "$type": "color" },
+    "accent-foreground":   { "$value": "{color.neutral.900}",  "$type": "color" },
+    "border":              { "$value": "{color.neutral.200}",  "$type": "color" },
+    "ring":                { "$value": "{color.neutral.400}",  "$type": "color" }
+  },
+
+  "chart": {
+    "1":        { "$value": "#F54A00", "$type": "color" },
+    "2":        { "$value": "#009689", "$type": "color" },
+    "3":        { "$value": "#104E64", "$type": "color" },
+    "4":        { "$value": "#FFB900", "$type": "color" },
+    "5":        { "$value": "#FE9A00", "$type": "color" },
+    "positive": { "$value": "#009689", "$type": "color" },
+    "negative": { "$value": "#F54A00", "$type": "color" }
+  }
+}
