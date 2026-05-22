@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head>
+<body>
+<style>
+  .grid { display: grid; grid-template-columns: repeat(11, 1fr); gap: 4px; }
+  .cell { display: flex; flex-direction: column; gap: 4px; }
+  .sw { aspect-ratio: 1; border-radius: 6px; border: 1px solid var(--black-a-5); }
+  .n { font: 500 9px/1 var(--font-mono); color: var(--muted-foreground); text-align: center; }
+  .ramp-label { font: 600 12px/1 var(--font-sans); letter-spacing: -0.2px; margin-bottom: 8px; }
+</style>
+<div class="col" style="gap:20px">
+  <div>
+    <div class="ramp-label">Brand Neutrals — the default palette</div>
+    <div class="grid" id="neu"></div>
+  </div>
+  <div>
+    <div class="ramp-label">Brand Shades (Blue) — accent ramp</div>
+    <div class="grid" id="blu"></div>
+  </div>
+</div>
+<script>
+  const steps = [50,100,200,300,400,500,600,700,800,900,950];
+  function fill(id, prefix) {
+    document.getElementById(id).innerHTML = steps.map(s =>
+      `<div class="cell"><div class="sw" style="background:var(--${prefix}-${s})"></div><div class="n">${s}</div></div>`
+    ).join('');
+  }
+  fill('neu', 'neutral');
+  fill('blu', 'blue');
+</script>
+</body></html>

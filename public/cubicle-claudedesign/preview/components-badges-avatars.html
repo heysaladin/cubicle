@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head>
+<body>
+<style>
+  .badge {
+    display: inline-flex; align-items: center; border-radius: 9999px;
+    border: 1px solid transparent; padding: 2px 10px;
+    font: 600 12px/1.4 var(--font-sans);
+  }
+  .b-default { background: var(--neutral-900); color: var(--neutral-50); }
+  .b-secondary { background: var(--neutral-100); color: var(--neutral-900); }
+  .b-destructive { background: var(--red-600); color: #fff; }
+  .b-outline { background: transparent; border-color: var(--neutral-200); color: var(--neutral-900); }
+  .b-success { background: transparent; color: var(--green-600); border-color: var(--green-600); }
+  .avatar { width: 40px; height: 40px; border-radius: 9999px; display: inline-flex; align-items: center; justify-content: center; font: 500 14px/1 var(--font-sans); }
+  .avatar-img { background: var(--neutral-100); border: 1px solid var(--border); color: var(--neutral-700); }
+  .stack { display: flex; }
+  .stack .avatar { margin-left: -10px; border: 2px solid #fff; }
+  .stack .avatar:first-child { margin-left: 0; }
+</style>
+<div class="col" style="gap:14px">
+  <div class="row">
+    <span class="badge b-default">Default</span>
+    <span class="badge b-secondary">Secondary</span>
+    <span class="badge b-destructive">Destructive</span>
+    <span class="badge b-outline">Outline</span>
+    <span class="badge b-success">Active</span>
+    <span class="badge b-secondary" style="padding-left:6px">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--green-600);margin-right:6px"></span>Live
+    </span>
+  </div>
+  <div class="row" style="gap:16px">
+    <span class="avatar avatar-img" style="background:#FFE3E3;color:#C92A2A">SA</span>
+    <span class="avatar avatar-img" style="background:#DBEAFE;color:#1D4ED8">MR</span>
+    <span class="avatar avatar-img" style="background:#D1FAE5;color:#047857">KL</span>
+    <span class="avatar avatar-img" style="background:#FEF3C7;color:#92400E">JP</span>
+    <span class="stack">
+      <span class="avatar avatar-img" style="background:#FFE3E3;color:#C92A2A">SA</span>
+      <span class="avatar avatar-img" style="background:#DBEAFE;color:#1D4ED8">MR</span>
+      <span class="avatar avatar-img" style="background:#D1FAE5;color:#047857">KL</span>
+      <span class="avatar avatar-img" style="background:var(--neutral-100);color:var(--neutral-700)">+5</span>
+    </span>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cubicle — Mobile UI Kit</title>
+<link rel="stylesheet" href="kit.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="ios-frame.jsx"></script>
+<script type="text/babel" src="Primitives.jsx"></script>
+<script type="text/babel" src="Screens.jsx"></script>
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+/* ── Phone frame helper ── */
+function Phone({ label, dark, children }) {
+  return (
+    <div className="device-wrap">
+      <IOSDevice dark={dark} width={390} height={844}>
+        {children}
+      </IOSDevice>
+      {label && <div className="device-label">{label}</div>}
+    </div>
+  );
+}
+
+/*
+ * TabScreen — wraps main-app screens with a bottom TabBar.
+ * Uses flex layout so TabBar is a sibling of the scrollable area,
+ * avoiding the overflow-clip issue with position:absolute.
+ */
+function TabScreen({ initialTab = 'home', dark }) {
+  const [tab, setTab] = useState(initialTab);
+  const [toast, setToast] = useState(null);
+  const [subnav, setSubnav] = useState(null); // e.g. 'settings' | 'notif' | 'txdetail'
+
+  const showToast = (msg, type = 'default') => {
+    setToast({ msg, type });
+    setTimeout(() => setToast(null), 2500);
+  };
+
+  const content = () => {
+    if (subnav === 'settings') return <SettingsScreen onBack={() => setSubnav(null)} dark={dark} onToggleDark={() => {}} />;
+    if (subnav === 'notif')    return <NotificationDetail item={{ t: 'Invoice #1842 overdue', s: 'Humm Inc · 2d late', time: 'Just now', icon: 'warning' }} onBack={() => setSubnav(null)} />;
+    if (subnav === 'txdetail') return <TransactionDetail tx={TX[0]} onBack={() => setSubnav(null)} onDelete={() => setSubnav(null)} />;
+    if (tab === 'home')    return <HomeScreen onOpenTx={() => setSubnav('txdetail')} onToast={showToast} />;
+    if (tab === 'search')  return <SearchScreen onFilter={() => {}} />;
+    if (tab === 'create')  return <CreateScreen onDone={() => setTab('home')} onCancel={() => setTab('home')} />;
+    if (tab === 'inbox')   return <InboxScreen onOpenDetail={() => setSubnav('notif')} onToast={showToast} />;
+    if (tab === 'profile') return <ProfileScreen onOpenSettings={() => setSubnav('settings')} onLogout={() => setTab('home')} />;
+    return null;
+  };
+
+  const showTabBar = !subnav;
+
+  return (
+    <div style={{ height: '100%', display: 'flex', flexDirection: 'column', background: 'var(--background)', color: 'var(--foreground)', position: 'relative', overflow: 'hidden' }}>
+      <Toast toast={toast} />
+      <div style={{ flex: 1, minHeight: 0, overflow: 'hidden', position: 'relative' }}>
+        {content()}
+      </div>
+      {showTabBar && (
+        <nav className="tabbar" style={{ position: 'relative', bottom: 'auto', left: 'auto', right: 'auto', padding: '10px 8px 28px' }}>
+          {TABS.map(t => (
+            <button key={t.id} className={cx('tab', tab === t.id && 'active')} onClick={() => setTab(t.id)}>
+              <Icon name={t.icon} size={22} />
+              {t.label}
+            </button>
+          ))}
+        </nav>
+      )}
+    </div>
+  );
+}
+
+/* ── Dark-mode toggle button ── */
+function DarkToggle({ dark, onToggle }) {
+  return (
+    <button
+      onClick={onToggle}
+      className="btn btn-outline btn-sm"
+      style={{ gap: 6, height: 34, padding: '0 12px', fontSize: 13 }}
+    >
+      <Icon name={dark ? 'sun' : 'moon'} size={14} />
+      {dark ? 'Light' : 'Dark'}
+    </button>
+  );
+}
+
+/* ── Section wrapper ── */
+function Section({ title, children }) {
+  return (
+    <div className="kit-section">
+      <div className="kit-section-title">{title}</div>
+      <div className="stage-row">{children}</div>
+    </div>
+  );
+}
+
+/* ── Main App ── */
+function App() {
+  const saved = (() => { try { return JSON.parse(localStorage.getItem('cubicle-mobile') || '{}'); } catch { return {}; } })();
+  const [dark, setDark] = useState(!!saved.dark);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', dark);
+    document.body.classList.toggle('dark', dark);
+    localStorage.setItem('cubicle-mobile', JSON.stringify({ dark }));
+  }, [dark]);
+
+  const d = dark; // shorthand
+
+  return (
+    <div style={{ minHeight: '100vh', background: 'var(--background)', color: 'var(--foreground)' }}>
+
+      {/* ── Header ── */}
+      <header className="kit-header">
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <span className="wordmark">Cubicle · Mobile</span>
+          <span className="build">UI Kit · v1.4</span>
+        </div>
+        <div className="controls">
+          <DarkToggle dark={dark} onToggle={() => setDark(!dark)} />
+        </div>
+      </header>
+
+      {/* ── 1. System Screens ── */}
+      <Section title="System Screens">
+        <Phone dark={d} label="Splash"><SplashScreen /></Phone>
+        <Phone dark={d} label="Maintenance"><MaintenanceScreen /></Phone>
+        <Phone dark={d} label="Offline"><OfflineScreen /></Phone>
+        <Phone dark={d} label="Error"><ErrorScreen onRetry={() => {}} /></Phone>
+      </Section>
+
+      {/* ── 2. Onboarding ── */}
+      <Section title="Onboarding">
+        <Phone dark={d} label="Intro slides">
+          <OnboardingScreen onDone={() => {}} />
+        </Phone>
+      </Section>
+
+      {/* ── 3. Authentication ── */}
+      <Section title="Authentication">
+        <Phone dark={d} label="Sign in"><LoginScreen onNext={() => {}} onBack={() => {}} /></Phone>
+        <Phone dark={d} label="Register"><RegisterScreen onNext={() => {}} onBack={() => {}} /></Phone>
+        <Phone dark={d} label="Forgot password"><ForgotPasswordScreen onBack={() => {}} /></Phone>
+        <Phone dark={d} label="OTP verify"><OTPScreen onDone={() => {}} onBack={() => {}} /></Phone>
+      </Section>
+
+      {/* ── 4. Home / Dashboard ── */}
+      <Section title="Home — Dashboard">
+        <Phone dark={d} label="Dashboard">
+          <TabScreen initialTab="home" dark={dark} />
+        </Phone>
+      </Section>
+
+      {/* ── 5. Main Navigation ── */}
+      <Section title="Main Navigation — Tabs">
+        <Phone dark={d} label="Search"><TabScreen initialTab="search" dark={dark} /></Phone>
+        <Phone dark={d} label="New / Create"><TabScreen initialTab="create" dark={dark} /></Phone>
+        <Phone dark={d} label="Inbox"><TabScreen initialTab="inbox" dark={dark} /></Phone>
+        <Phone dark={d} label="Profile"><TabScreen initialTab="profile" dark={dark} /></Phone>
+      </Section>
+
+      {/* ── 6. Content ── */}
+      <Section title="Content — List / Feed / Detail">
+        <Phone dark={d} label="List / Feed">
+          <ListFeedScreen onOpen={() => {}} />
+        </Phone>
+        <Phone dark={d} label="Item detail">
+          <ItemDetailScreen onBack={() => {}} onToast={() => {}} />
+        </Phone>
+        <Phone dark={d} label="Activity">
+          <TransactionsScreen onOpen={() => {}} />
+        </Phone>
+      </Section>
+
+      {/* ── 7. Detail & Forms ── */}
+      <Section title="Detail & Create / Edit">
+        <Phone dark={d} label="Transaction detail">
+          <TransactionDetail tx={TX[0]} onBack={() => {}} onDelete={() => {}} />
+        </Phone>
+        <Phone dark={d} label="Create / Edit">
+          <CreateScreen onDone={() => {}} onCancel={() => {}} />
+        </Phone>
+        <Phone dark={d} label="Notification detail">
+          <NotificationDetail
+            item={{ t: 'Invoice #1842 overdue', s: 'Humm Inc · Payment 2d late', time: 'Just now', icon: 'warning' }}
+            onBack={() => {}}
+          />
+        </Phone>
+      </Section>
+
+      {/* ── 8. Settings & Support ── */}
+      <Section title="Settings & Support">
+        <Phone dark={d} label="Settings">
+          <SettingsScreen onBack={() => {}} dark={dark} onToggleDark={() => setDark(!dark)} />
+        </Phone>
+        <Phone dark={d} label="Help & FAQ">
+          <HelpScreen onBack={() => {}} />
+        </Phone>
+      </Section>
+
+      {/* ── 9. New Components ── */}
+      <Section title="New Components — v1.5">
+        <Phone dark={d} label="Accordion · Progress · Skeleton · Toggle · Breadcrumb · Pagination">
+          <ComponentShowcaseScreen />
+        </Phone>
+      </Section>
+
+      {/* footer */}
+      <div style={{ padding: '40px 32px', borderTop: '1px solid var(--border)', marginTop: 8, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span style={{ font: '400 13px/1 var(--font-mono)', color: 'var(--muted-foreground)' }}>Cubicle Design System · Mobile UI Kit</span>
+        <span style={{ font: '400 13px/1 var(--font-mono)', color: 'var(--muted-foreground)' }}>{new Date().getFullYear()}</span>
+      </div>
+
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

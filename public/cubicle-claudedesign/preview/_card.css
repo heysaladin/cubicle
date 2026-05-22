@@ -1,0 +1,36 @@
+/* Shared styles for design system preview cards.
+   Each card is ~700×<var>px, rendered inside the Design System tab iframe.
+   Keep cards quiet: no titles, no chrome — just the specimen. */
+@import url('../colors_and_type.css');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  padding: 24px;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+* { box-sizing: border-box; }
+
+.card-grid { display: grid; gap: 16px; }
+.row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.col { display: flex; flex-direction: column; gap: 8px; }
+.label {
+  font: 500 11px/1 var(--font-mono);
+  color: var(--muted-foreground);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.swatch {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+.mono { font-family: var(--font-mono); font-size: 12px; color: var(--muted-foreground); }

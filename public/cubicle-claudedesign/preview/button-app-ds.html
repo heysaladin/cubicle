@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Button — App DS variants</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Geist', 'system-ui', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Geist', system-ui, sans-serif; background: #f5f5f5; }
+    .section { margin: 0 0 32px; }
+    .section-title { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #737373; margin: 0 0 12px; }
+    .row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+    .label { font-size: 11px; color: #a3a3a3; width: 120px; flex-shrink: 0; }
+    .page { max-width: 960px; margin: 0 auto; padding: 48px 32px; }
+    .divider { border: none; border-top: 1px solid #e5e5e5; margin: 32px 0; }
+    svg { display: inline-block; }
+  </style>
+</head>
+<body>
+<div class="page">
+  <h1 style="font-size:24px;font-weight:700;color:#0a0a0a;margin:0 0 8px">Button — App DS</h1>
+  <p style="font-size:14px;color:#737373;margin:0 0 40px">All hierarchies × all sizes × default + disabled states · Adapted to Cubicle tokens</p>
+
+  <!-- Icon SVG (circle placeholder matching Figma) -->
+  <template id="icon-sm">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+  </template>
+  <template id="icon-md">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+  </template>
+  <template id="icon-lg">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+  </template>
+
+  <!-- ─── PRIMARY ─────────────────────────────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title">Primary</div>
+
+    <div class="row">
+      <span class="label">sm · Default</span>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#0063f5] text-white border-2 border-white/[0.12] hover:bg-[#0056d6] active:bg-[#004ab8] min-h-8 gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-semibold tracking-[0.5px]">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+        Button CTA
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#0063f5] text-white border-2 border-white/[0.12] min-h-8 gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-semibold tracking-[0.5px]">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+        Button CTA
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#0063f5] text-white border-2 border-white/[0.12] hover:bg-[#0056d6] size-8 rounded-md">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+
+    <div class="row">
+      <span class="label">xl · Default</span>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#0063f5] text-white border-2 border-white/[0.12] hover:bg-[#0056d6] active:bg-[#004ab8] min-h-[46px] min-w-[90px] gap-1.5 px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+        Button CTA
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#0063f5] text-white border-2 border-white/[0.12] min-h-[46px] min-w-[90px] gap-1.5 px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+        Button CTA
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#0063f5] text-white border-2 border-white/[0.12] hover:bg-[#0056d6] size-[46px] rounded-lg">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+
+    <div class="row">
+      <span class="label">2xl · Default</span>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#0063f5] text-white border-2 border-white/[0.12] hover:bg-[#0056d6] active:bg-[#004ab8] min-h-14 min-w-[90px] gap-2 px-5 py-4 rounded-[10px] text-[17.5px] leading-[26px] font-bold tracking-[0.1px]">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/></svg>
+        Button CTA
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#0063f5] text-white border-2 border-white/[0.12] min-h-14 min-w-[90px] gap-2 px-5 py-4 rounded-[10px] text-[17.5px] leading-[26px] font-bold tracking-[0.1px]">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/></svg>
+        Button CTA
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#0063f5] text-white border-2 border-white/[0.12] hover:bg-[#0056d6] size-14 rounded-[10px]">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ─── SECONDARY GRAY ──────────────────────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title">Secondary gray</div>
+    <div class="row">
+      <span class="label">sm</span>
+      <button class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-white [border-width:1.5px] border-solid border-neutral-300 text-neutral-700 hover:bg-neutral-50 hover:border-neutral-400 active:bg-neutral-100 min-h-8 px-2.5 py-1.5 rounded-md text-xs font-semibold tracking-[0.5px]">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-white [border-width:1.5px] border-solid border-neutral-300 text-neutral-700 min-h-8 px-2.5 py-1.5 rounded-md text-xs font-semibold tracking-[0.5px]">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-white [border-width:1.5px] border-solid border-neutral-300 text-neutral-700 hover:bg-neutral-50 size-8 rounded-md">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <div class="row">
+      <span class="label">xl</span>
+      <button class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-white [border-width:1.5px] border-solid border-neutral-300 text-neutral-700 hover:bg-neutral-50 hover:border-neutral-400 min-h-[46px] min-w-[90px] px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-white [border-width:1.5px] border-solid border-neutral-300 text-neutral-700 min-h-[46px] min-w-[90px] px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-white [border-width:1.5px] border-solid border-neutral-300 text-neutral-700 hover:bg-neutral-50 size-[46px] rounded-lg">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <div class="row">
+      <span class="label">2xl</span>
+      <button class="inline-flex items-center gap-2 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-white [border-width:1.5px] border-solid border-neutral-300 text-neutral-700 hover:bg-neutral-50 hover:border-neutral-400 min-h-14 min-w-[90px] px-5 py-4 rounded-[10px] text-[17.5px] leading-[26px] font-bold tracking-[0.1px]">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center gap-2 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-white [border-width:1.5px] border-solid border-neutral-300 text-neutral-700 min-h-14 min-w-[90px] px-5 py-4 rounded-[10px] text-[17.5px] leading-[26px] font-bold tracking-[0.1px]">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-white [border-width:1.5px] border-solid border-neutral-300 text-neutral-700 hover:bg-neutral-50 size-14 rounded-[10px]">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ─── SECONDARY COLOR ─────────────────────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title">Secondary color</div>
+    <div class="row">
+      <span class="label">sm</span>
+      <button class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-white [border-width:1.5px] border-solid border-[#0063f5] text-[#0063f5] hover:bg-blue-50 active:bg-blue-100 min-h-8 px-2.5 py-1.5 rounded-md text-xs font-semibold tracking-[0.5px]">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-white [border-width:1.5px] border-solid border-[#0063f5] text-[#0063f5] min-h-8 px-2.5 py-1.5 rounded-md text-xs font-semibold tracking-[0.5px]">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-white [border-width:1.5px] border-solid border-[#0063f5] text-[#0063f5] hover:bg-blue-50 size-8 rounded-md">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <div class="row">
+      <span class="label">xl</span>
+      <button class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-white [border-width:1.5px] border-solid border-[#0063f5] text-[#0063f5] hover:bg-blue-50 active:bg-blue-100 min-h-[46px] min-w-[90px] px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-white [border-width:1.5px] border-solid border-[#0063f5] text-[#0063f5] min-h-[46px] min-w-[90px] px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-white [border-width:1.5px] border-solid border-[#0063f5] text-[#0063f5] hover:bg-blue-50 size-[46px] rounded-lg">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ─── TERTIARY GRAY ───────────────────────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title">Tertiary gray</div>
+    <div class="row">
+      <span class="label">sm</span>
+      <button class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:bg-neutral-300 min-h-8 px-2.5 py-1.5 rounded-md text-xs font-semibold tracking-[0.5px]">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-neutral-100 text-neutral-700 min-h-8 px-2.5 py-1.5 rounded-md text-xs font-semibold tracking-[0.5px]">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-neutral-100 text-neutral-700 hover:bg-neutral-200 size-8 rounded-md">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <div class="row">
+      <span class="label">xl</span>
+      <button class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:bg-neutral-300 min-h-[46px] min-w-[90px] px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-neutral-100 text-neutral-700 min-h-[46px] min-w-[90px] px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-neutral-100 text-neutral-700 hover:bg-neutral-200 size-[46px] rounded-lg">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ─── TERTIARY COLOR ──────────────────────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title">Tertiary color</div>
+    <div class="row">
+      <span class="label">xl</span>
+      <button class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-blue-50 text-[#0063f5] hover:bg-blue-100 active:bg-blue-200 min-h-[46px] min-w-[90px] px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-blue-50 text-[#0063f5] min-h-[46px] min-w-[90px] px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-blue-50 text-[#0063f5] hover:bg-blue-100 size-[46px] rounded-lg">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ─── LINK GRAY ───────────────────────────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title">Link gray</div>
+    <div class="row">
+      <span class="label">sm</span>
+      <button class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 text-neutral-600 hover:text-neutral-900 min-h-8 px-2.5 py-1.5 rounded-md text-xs font-semibold tracking-[0.5px]">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 text-neutral-600 min-h-8 px-2.5 py-1.5 rounded-md text-xs font-semibold tracking-[0.5px]">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 text-neutral-600 hover:text-neutral-900 size-8 rounded-md">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <div class="row">
+      <span class="label">xl</span>
+      <button class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 text-neutral-600 hover:text-neutral-900 min-h-[46px] px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 text-neutral-600 min-h-[46px] px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ─── LINK COLOR ──────────────────────────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title">Link color</div>
+    <div class="row">
+      <span class="label">sm</span>
+      <button class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 text-[#0063f5] hover:text-[#0056d6] min-h-8 px-2.5 py-1.5 rounded-md text-xs font-semibold tracking-[0.5px]">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 text-[#0063f5] min-h-8 px-2.5 py-1.5 rounded-md text-xs font-semibold tracking-[0.5px]">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 text-[#0063f5] hover:text-[#0056d6] size-8 rounded-md">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <div class="row">
+      <span class="label">xl</span>
+      <button class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 text-[#0063f5] hover:text-[#0056d6] min-h-[46px] px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 text-[#0063f5] min-h-[46px] px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ─── 2ND PRIMARY (YELLOW) ────────────────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title">2nd Primary (yellow)</div>
+    <div class="row">
+      <span class="label">sm</span>
+      <button class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#ffdd33] text-neutral-900 border-2 border-white/[0.12] hover:bg-[#f5d100] active:bg-[#e6c500] min-h-8 px-2.5 py-1.5 rounded-md text-xs font-semibold tracking-[0.5px]">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#ffdd33] text-neutral-900 border-2 border-white/[0.12] min-h-8 px-2.5 py-1.5 rounded-md text-xs font-semibold tracking-[0.5px]">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#ffdd33] text-neutral-900 border-2 border-white/[0.12] hover:bg-[#f5d100] size-8 rounded-md">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <div class="row">
+      <span class="label">xl</span>
+      <button class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#ffdd33] text-neutral-900 border-2 border-white/[0.12] hover:bg-[#f5d100] active:bg-[#e6c500] min-h-[46px] min-w-[90px] px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center gap-1.5 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#ffdd33] text-neutral-900 border-2 border-white/[0.12] min-h-[46px] min-w-[90px] px-4 py-3 rounded-lg text-sm font-semibold tracking-[0.5px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#ffdd33] text-neutral-900 border-2 border-white/[0.12] hover:bg-[#f5d100] size-[46px] rounded-lg">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <div class="row">
+      <span class="label">2xl</span>
+      <button class="inline-flex items-center gap-2 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#ffdd33] text-neutral-900 border-2 border-white/[0.12] hover:bg-[#f5d100] active:bg-[#e6c500] min-h-14 min-w-[90px] px-5 py-4 rounded-[10px] text-[17.5px] leading-[26px] font-bold tracking-[0.1px]">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button disabled class="inline-flex items-center gap-2 whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#ffdd33] text-neutral-900 border-2 border-white/[0.12] min-h-14 min-w-[90px] px-5 py-4 rounded-[10px] text-[17.5px] leading-[26px] font-bold tracking-[0.1px]">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/></svg>Button CTA<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap font-sans transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-[#ffdd33] text-neutral-900 border-2 border-white/[0.12] hover:bg-[#f5d100] size-14 rounded-[10px]">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ─── USAGE REFERENCE ─────────────────────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title">React usage — button.tsx variants</div>
+    <pre style="background:#0a0a0a;color:#e5e5e5;padding:24px;border-radius:8px;font-size:12px;line-height:1.7;overflow-x:auto;font-family:'Geist Mono',monospace"
+><code>import { Button } from "@/components/ui/button"
+
+// Hierarchies
+&lt;Button variant="primary" size="app-xl"&gt;Button CTA&lt;/Button&gt;
+&lt;Button variant="primary-yellow" size="app-xl"&gt;Button CTA&lt;/Button&gt;
+&lt;Button variant="secondary-gray" size="app-xl"&gt;Button CTA&lt;/Button&gt;
+&lt;Button variant="secondary-color" size="app-xl"&gt;Button CTA&lt;/Button&gt;
+&lt;Button variant="tertiary-gray" size="app-xl"&gt;Button CTA&lt;/Button&gt;
+&lt;Button variant="tertiary-color" size="app-xl"&gt;Button CTA&lt;/Button&gt;
+&lt;Button variant="link-gray" size="app-xl"&gt;Button CTA&lt;/Button&gt;
+&lt;Button variant="link-color" size="app-xl"&gt;Button CTA&lt;/Button&gt;
+
+// Sizes
+&lt;Button variant="primary" size="app-sm"&gt;Button CTA&lt;/Button&gt;
+&lt;Button variant="primary" size="app-xl"&gt;Button CTA&lt;/Button&gt;
+&lt;Button variant="primary" size="app-2xl"&gt;Button CTA&lt;/Button&gt;
+
+// Icon-only
+&lt;Button variant="primary" size="icon-app-xl"&gt;&lt;CircleIcon /&gt;&lt;/Button&gt;
+
+// Disabled
+&lt;Button variant="primary" size="app-xl" disabled&gt;Button CTA&lt;/Button&gt;
+
+// With icons (Lucide)
+import { Circle } from "lucide-react"
+&lt;Button variant="primary" size="app-xl"&gt;
+  &lt;Circle /&gt; Button CTA &lt;Circle /&gt;
+&lt;/Button&gt;</code></pre>
+  </div>
+</div>
+</body>
+</html>

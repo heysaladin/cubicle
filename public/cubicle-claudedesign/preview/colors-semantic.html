@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head>
+<body>
+<style>
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .mode {
+    border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .mode.light { background: #FFFFFF; color: var(--neutral-950); }
+  .mode.dark { background: #000000; color: var(--neutral-50); border-color: var(--neutral-800); }
+  .token-row { display: flex; align-items: center; gap: 10px; font: 400 12px/1 var(--font-mono); }
+  .chip { width: 24px; height: 24px; border-radius: 6px; flex-shrink: 0; border: 1px solid currentColor; border-color: rgba(127,127,127,.25); }
+  .mode-label { font: 600 11px/1 var(--font-sans); letter-spacing: 1px; text-transform: uppercase; opacity: .5; }
+</style>
+<div class="pair">
+  <div class="mode light">
+    <div class="mode-label">Light</div>
+    <div class="token-row"><div class="chip" style="background:#FFFFFF"></div>background</div>
+    <div class="token-row"><div class="chip" style="background:#0A0A0A"></div>foreground</div>
+    <div class="token-row"><div class="chip" style="background:#171717"></div>primary</div>
+    <div class="token-row"><div class="chip" style="background:#F5F5F5"></div>secondary / muted</div>
+    <div class="token-row"><div class="chip" style="background:#737373"></div>muted-foreground</div>
+    <div class="token-row"><div class="chip" style="background:#E5E5E5"></div>border / input</div>
+    <div class="token-row"><div class="chip" style="background:#FA5252"></div>destructive</div>
+  </div>
+  <div class="mode dark">
+    <div class="mode-label">Dark</div>
+    <div class="token-row"><div class="chip" style="background:#000000"></div>background</div>
+    <div class="token-row"><div class="chip" style="background:#FAFAFA"></div>foreground</div>
+    <div class="token-row"><div class="chip" style="background:#F5F5F5"></div>primary</div>
+    <div class="token-row"><div class="chip" style="background:#262626"></div>secondary</div>
+    <div class="token-row"><div class="chip" style="background:#A3A3A3"></div>muted-foreground</div>
+    <div class="token-row"><div class="chip" style="background:#262626"></div>border / input</div>
+    <div class="token-row"><div class="chip" style="background:#FF6B6B"></div>destructive</div>
+  </div>
+</div>
+</body></html>

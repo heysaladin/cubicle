@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head>
+<body>
+<style>
+  body { background: var(--neutral-100); }
+  .row-s { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .sh { background: #fff; border-radius: 8px; height: 72px; display: flex; align-items: center; justify-content: center; font: 500 11px/1 var(--font-mono); color: var(--muted-foreground); }
+  .tok { display: flex; flex-direction: column; gap: 8px; }
+  .nm { font: 500 10px/1 var(--font-mono); color: var(--muted-foreground); text-align: center; }
+</style>
+<div class="row-s">
+  <div class="tok"><div class="sh" style="box-shadow:var(--shadow-xs)">xs</div><div class="nm">shadow-xs</div></div>
+  <div class="tok"><div class="sh" style="box-shadow:var(--shadow-sm)">sm</div><div class="nm">shadow-sm · card</div></div>
+  <div class="tok"><div class="sh" style="box-shadow:var(--shadow-md)">md</div><div class="nm">shadow-md · popover</div></div>
+  <div class="tok"><div class="sh" style="box-shadow:var(--shadow-lg)">lg</div><div class="nm">shadow-lg · dialog</div></div>
+  <div class="tok"><div class="sh" style="box-shadow:var(--shadow-xl)">xl</div><div class="nm">shadow-xl</div></div>
+  <div class="tok"><div class="sh" style="box-shadow:var(--shadow-2xl)">2xl</div><div class="nm">shadow-2xl</div></div>
+  <div class="tok"><div class="sh" style="box-shadow:var(--shadow-2xs)">2xs</div><div class="nm">shadow-2xs</div></div>
+  <div class="tok"><div class="sh" style="border:1px solid var(--border); box-shadow:none">—</div><div class="nm">border only</div></div>
+</div>
+</body></html>

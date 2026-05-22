@@ -1,0 +1,48 @@
+import { StayItem } from '@/types'
+
+export const stays: StayItem[] = [
+  {
+    id: 'garden-villa',
+    slug: 'garden-villa',
+    name: 'Garden Villa',
+    description: 'Nestled among lush tropical gardens, our Garden Villa offers a peaceful retreat with stunning mountain views and private outdoor space.',
+    shortDescription: 'Lush gardens & mountain views',
+    bedrooms: 1,
+    area: '120 sqm',
+    images: ['/images/garden-villa-1.webp', '/images/garden-villa-2.webp'],
+    features: ['Private pool', 'Garden terrace', 'Mountain views', 'King bed'],
+  },
+  {
+    id: 'pool-villa',
+    slug: 'pool-villa',
+    name: 'Pool Villa',
+    description: 'A luxurious escape with your own private pool, set within the serene hillside landscape of North Bali.',
+    shortDescription: 'Private pool in paradise',
+    bedrooms: 1,
+    area: '150 sqm',
+    images: ['/images/pool-villa-1.webp', '/images/pool-villa-2.webp'],
+    features: ['Private infinity pool', 'Outdoor shower', 'Valley views', 'Butler service'],
+  },
+  {
+    id: 'luxury-pool-villa',
+    slug: 'luxury-pool-villa',
+    name: 'Luxury Pool Villa',
+    description: 'Our most refined villa experience, combining architectural elegance with the finest amenities and breathtaking panoramic views.',
+    shortDescription: 'The pinnacle of luxury',
+    bedrooms: 1,
+    area: '200 sqm',
+    images: ['/images/luxury-pool-villa-1.webp', '/images/luxury-pool-villa-2.webp'],
+    features: ['Panoramic infinity pool', 'Private dining terrace', 'Spa bath', 'Dedicated villa host'],
+  },
+  {
+    id: 'two-bedroom-pool-villa',
+    slug: 'two-bedroom-pool-villa',
+    name: 'Two Bedroom Pool Villa',
+    description: 'Designed for families or groups seeking the ultimate in space and privacy, with two bedrooms and a shared private pool.',
+    shortDescription: 'Space & privacy for two',
+    bedrooms: 2,
+    area: '280 sqm',
+    images: ['/images/two-bedroom-1.webp', '/images/two-bedroom-2.webp'],
+    features: ['Shared private pool', '2 king bedrooms', 'Living room', 'Full kitchen'],
+  },
+]

@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Fonts ─────────────────────────────────────────────────────────────────
+   Place Interdisplay font files in /public/fonts/
+   (Interdisplay-Light.woff2, Interdisplay-Regular.woff2, Interdisplay-Medium.woff2,
+    Interdisplay-SemiBold.woff2, Interdisplay-Bold.woff2)
+────────────────────────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('/fonts/Interdisplay-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('/fonts/Interdisplay-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('/fonts/Interdisplay-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('/fonts/Interdisplay-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('/fonts/Interdisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Design Tokens (CSS custom properties) ────────────────────────────────── */
+:root {
+  /* colors */
+  --black: #000000;
+  --white: #ffffff;
+  --primary: #6f776e;
+  --paragraph-color: #6f776e;
+  --light-gray: #f3f3f2;
+  --gray: #e6e6e6;
+  --dark-grey: #dedede;
+  --soft-white: #fcfcf6;
+  --stroke: #474747;
+  --link-hover: #b3b3b3;
+  --black-10: rgba(0, 0, 0, 0.10);
+  --black-30: rgba(0, 0, 0, 0.30);
+  --black-40: rgba(0, 0, 0, 0.40);
+  --black-50: rgba(0, 0, 0, 0.50);
+  --black-60: rgba(0, 0, 0, 0.60);
+  --white-20: rgba(255, 255, 255, 0.20);
+  --white-50: rgba(255, 255, 255, 0.50);
+  --soft-grey-30: rgba(232, 232, 232, 0.30);
+
+  /* typography */
+  --font-primary: 'Interdisplay', 'Inter', Arial, sans-serif;
+  --font-size-hero: 60px;
+  --font-size-h1: 60px;
+  --font-size-h2: 48px;
+  --font-size-h3: 30px;
+  --font-size-h4: 26px;
+  --font-size-h5: 20px;
+  --font-size-h6: 16px;
+  --font-size-body: 16px;
+  --font-size-sm: 14px;
+
+  /* spacing */
+  --section-padding: 80px;
+  --container-width: 1280px;
+  --container-padding: 15px;
+  --banner-top: 120px;
+
+  /* radius */
+  --radius-xxs: 2px;
+  --radius-xs: 4px;
+  --radius-s: 6px;
+  --radius-m: 10px;
+  --radius-l: 100px;
+
+  /* transitions */
+  --transition-default: all 0.35s ease;
+  --transition-fast: all 0.3s ease;
+}
+
+/* ─── Base Elements ──────────────────────────────────────────────────────────── */
+@layer base {
+  html { height: 100%; }
+
+  body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-body);
+    line-height: 1.5em;
+    font-weight: 400;
+    color: var(--black);
+    background-color: var(--white);
+    min-height: 100%;
+    margin: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  h1 { font-size: var(--font-size-h1); line-height: 1.1em; }
+  h2 { font-size: var(--font-size-h2); line-height: 1.1em; }
+  h3 { font-size: var(--font-size-h3); line-height: 1.1em; }
+  h4 { font-size: var(--font-size-h4); line-height: 1.2em; }
+  h5 { font-size: var(--font-size-h5); line-height: 1.3em; }
+  h6 { font-size: var(--font-size-h6); line-height: 1.5em; }
+
+  p {
+    color: var(--paragraph-color);
+    font-size: var(--font-size-body);
+    line-height: 1.5em;
+    font-weight: 400;
+  }
+
+  a {
+    color: var(--black);
+    font-size: var(--font-size-body);
+    line-height: 1.5em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition-default);
+    display: inline-flex;
+  }
+
+  a:hover {
+    opacity: 0.9;
+    color: var(--paragraph-color);
+  }
+
+  img {
+    max-width: 100%;
+    display: inline-block;
+  }
+}
+
+/* ─── Component Layer ─────────────────────────────────────────────────────────
+   Layout primitives and utility classes referenced in components
+────────────────────────────────────────────────────────────────────────────── */
+@layer components {
+  .base-container {
+    width: 100%;
+    max-width: var(--container-width);
+    padding: 0 var(--container-padding);
+    margin: 0 auto;
+  }
+
+  .section {
+    padding: var(--section-padding) 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section.no-top-padding { padding-top: 0; }
+  .section.primary-bg     { background-color: var(--primary); }
+  .section.light-gray-bg  { background-color: var(--light-gray); }
+  .section.dark-bg        { background-color: var(--black); }
+
+  .line-grey {
+    width: 100%;
+    height: 1px;
+    background-color: var(--gray);
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: var(--black-30);
+  }
+
+  .overlay-dark {
+    position: absolute;
+    inset: 0;
+    background-color: var(--black-60);
+  }
+
+  .full-image {
+    object-fit: cover;
+    object-position: 50% 30%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .dot-element {
+    border-radius: 10px;
+    width: 4px;
+    height: 4px;
+    background-color: var(--primary);
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  .icon-wrapper {
+    padding: 8px;
+    border: 1px solid var(--dark-grey);
+    border-radius: var(--radius-m);
+    background-color: var(--soft-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 46px;
+  }
+
+  .slide-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .slide-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

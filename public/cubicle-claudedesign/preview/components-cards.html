@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head>
+<body>
+<style>
+  .card {
+    background: #fff; border: 1px solid var(--neutral-200); border-radius: 8px;
+    box-shadow: var(--shadow-sm); padding: 24px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .card + .card { margin-top: 0; }
+  .ct { font: 600 24px/1 var(--font-sans); letter-spacing: -0.4px; }
+  .cd { font: 400 14px/21px var(--font-sans); color: var(--muted-foreground); }
+  .cb { margin-top: 12px; font: 400 14px/21px var(--font-sans); }
+  .cf { margin-top: 16px; display: flex; gap: 8px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 14px; border-radius: 6px; font: 500 13px/1 var(--font-sans); border: 1px solid transparent; cursor: pointer; }
+  .btn-p { background: var(--neutral-900); color: #fff; }
+  .btn-o { background: #fff; color: var(--neutral-900); border-color: var(--neutral-200); }
+</style>
+<div class="row" style="gap:14px;align-items:stretch">
+  <div class="card" style="flex:1">
+    <div class="ct">New project</div>
+    <div class="cd">Deploy your new project in one click.</div>
+    <div class="cb">Choose a framework, pick a region, and we'll handle the rest.</div>
+    <div class="cf"><button class="btn btn-o">Cancel</button><button class="btn btn-p">Deploy</button></div>
+  </div>
+  <div class="card" style="flex:1">
+    <div class="ct">Revenue</div>
+    <div class="cd">Last 30 days</div>
+    <div style="font:700 36px/1 var(--font-sans);letter-spacing:-1px;margin-top:8px">$12,480</div>
+    <div style="font:500 13px/1 var(--font-sans);color:var(--green-600);margin-top:4px">+12.4% vs prior</div>
+  </div>
+</div>
+</body></html>

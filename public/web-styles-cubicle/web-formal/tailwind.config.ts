@@ -1,0 +1,92 @@
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
+  content: ['./src/**/*.{ts,tsx,js,jsx}'],
+  theme: {
+    extend: {
+      colors: {
+        primary: '#6f776e',
+        'soft-white': '#fcfcf6',
+        'light-gray': '#f3f3f2',
+        'bestra-gray': '#e6e6e6',
+        'dark-grey': '#dedede',
+        stroke: '#474747',
+        'link-hover': '#b3b3b3',
+        'near-black': '#0e0e0e',
+      },
+      fontFamily: {
+        primary: ['Interdisplay', 'Inter', 'Arial', 'sans-serif'],
+        sans: ['Interdisplay', 'Inter', 'Arial', 'sans-serif'],
+      },
+      fontSize: {
+        hero: ['60px', { lineHeight: '1.1em', letterSpacing: '-0.02em', fontWeight: '500' }],
+        h1: ['60px', { lineHeight: '1.1em', letterSpacing: '-0.02em', fontWeight: '500' }],
+        h2: ['48px', { lineHeight: '1.1em', letterSpacing: '-0.02em', fontWeight: '500' }],
+        'display-01': ['44px', { lineHeight: '1em', fontWeight: '500' }],
+        'display-02': ['46px', { lineHeight: '1.1em', fontWeight: '500' }],
+        'display-03': ['30px', { lineHeight: '1.1em', fontWeight: '500' }],
+        h3: ['30px', { lineHeight: '1.1em', letterSpacing: '-0.02em', fontWeight: '500' }],
+        h4: ['26px', { lineHeight: '1.2em', fontWeight: '500' }],
+        h5: ['20px', { lineHeight: '1.3em', letterSpacing: '-0.02em', fontWeight: '500' }],
+        h6: ['16px', { lineHeight: '1.5em', fontWeight: '500' }],
+        'text-xxl': ['24px', { lineHeight: '1.5em' }],
+        'text-xl': ['22px', { lineHeight: '1.5em' }],
+        'text-l': ['20px', { lineHeight: '1.5em' }],
+        'text-m': ['18px', { lineHeight: '1.5em' }],
+        'text-body': ['16px', { lineHeight: '1.5em' }],
+        'text-sm': ['14px', { lineHeight: '1.5em' }],
+      },
+      spacing: {
+        xxs: '4px',
+        xs: '6px',
+        s: '8px',
+        sm: '10px',
+        m: '12px',
+        ml: '15px',
+        l: '20px',
+        xl: '22px',
+        '2xl': '24px',
+        '3xl': '30px',
+        '4xl': '40px',
+        '50': '50px',
+        '5xl': '60px',
+        '6xl': '70px',
+        '7xl': '80px',
+        '8xl': '100px',
+        '9xl': '130px',
+      },
+      borderRadius: {
+        xxs: '2px',
+        xs: '4px',
+        s: '6px',
+        m: '10px',
+        l: '100px',
+      },
+      maxWidth: {
+        container: '1280px',
+      },
+      screens: {
+        '2xl': '1920px',
+        xl: '1440px',
+        lg: '1280px',
+        md: '991px',
+        sm: '767px',
+        xs: '479px',
+      },
+      transitionDuration: {
+        '350': '350ms',
+      },
+      letterSpacing: {
+        tightest: '-0.02em',
+        tighter: '-0.01em',
+        xs: '0.35px',
+        s: '0.5px',
+        m: '0.8px',
+        l: '1.1px',
+      },
+    },
+  },
+  plugins: [],
+}
+
+export default config

@@ -1,0 +1,113 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head>
+<body>
+<style>
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .lbl { font: 500 13px/1 var(--font-sans); color: var(--neutral-900); }
+  .hint { font: 400 12px/1 var(--font-sans); color: var(--muted-foreground); }
+  /* Textarea */
+  .textarea {
+    padding: 10px 12px; border-radius: 6px; border: 1px solid var(--neutral-200);
+    background: #fff; font: 400 13px/1.5 var(--font-sans); color: var(--neutral-950);
+    resize: vertical; min-height: 80px; width: 100%;
+  }
+  .textarea::placeholder { color: var(--neutral-400); }
+  .textarea:focus { outline: 2px solid var(--neutral-950); outline-offset: 2px; }
+  /* Select */
+  .select-wrap { position: relative; }
+  .select {
+    appearance: none; height: 40px; padding: 0 36px 0 12px; border-radius: 6px;
+    border: 1px solid var(--neutral-200); background: #fff;
+    font: 400 13px/1 var(--font-sans); color: var(--neutral-950); cursor: pointer; width: 100%;
+  }
+  .select:focus { outline: 2px solid var(--neutral-950); outline-offset: 2px; }
+  .select-chevron {
+    position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+    width: 16px; height: 16px; color: var(--neutral-500); pointer-events: none;
+  }
+  /* Radio */
+  .radio-group { display: flex; flex-direction: column; gap: 10px; }
+  .radio-item { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+  .radio-circle {
+    width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--neutral-400);
+    background: #fff; flex-shrink: 0; position: relative;
+  }
+  .radio-circle.on { border-color: var(--neutral-900); border-width: 2px; }
+  .radio-circle.on::after { content:''; position:absolute; width:6px; height:6px; border-radius:50%; background:var(--neutral-900); top:50%; left:50%; transform:translate(-50%,-50%); }
+  .radio-item span { font: 400 13px/1 var(--font-sans); color: var(--neutral-800); }
+  /* Slider */
+  .slider-wrap { position: relative; height: 20px; display: flex; align-items: center; }
+  .slider-track { width: 100%; height: 4px; background: var(--neutral-200); border-radius: 9999px; position: relative; }
+  .slider-fill { height: 100%; background: var(--neutral-900); border-radius: 9999px; }
+  .slider-thumb {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 16px; height: 16px; border-radius: 50%; background: #fff;
+    border: 2px solid var(--neutral-900); box-shadow: 0 1px 3px rgba(0,0,0,.12);
+    cursor: grab;
+  }
+</style>
+<div class="col" style="gap:18px">
+
+  <div class="row" style="align-items:flex-start;gap:16px">
+    <div class="field" style="flex:1">
+      <label class="lbl">Description</label>
+      <textarea class="textarea" placeholder="Add a short description…"></textarea>
+      <span class="hint">Markdown supported.</span>
+    </div>
+    <div class="field" style="flex:1">
+      <label class="lbl">Notes</label>
+      <textarea class="textarea" style="min-height:80px">Shipped in 1.4.0. No breaking changes expected.</textarea>
+    </div>
+  </div>
+
+  <div class="row" style="align-items:flex-end;gap:16px">
+    <div class="field" style="flex:1">
+      <label class="lbl">Region</label>
+      <div class="select-wrap">
+        <select class="select">
+          <option>US East (N. Virginia)</option>
+          <option>US West (Oregon)</option>
+          <option>EU (Frankfurt)</option>
+          <option>Asia Pacific (Singapore)</option>
+        </select>
+        <svg class="select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+    </div>
+    <div class="field" style="flex:1">
+      <label class="lbl">Framework</label>
+      <div class="select-wrap">
+        <select class="select">
+          <option selected>Next.js</option>
+          <option>Vite</option>
+          <option>Remix</option>
+          <option>Astro</option>
+        </select>
+        <svg class="select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+    </div>
+    <div class="field">
+      <label class="lbl">Plan</label>
+      <div class="radio-group">
+        <label class="radio-item"><span class="radio-circle on"></span><span>Hobby</span></label>
+        <label class="radio-item"><span class="radio-circle"></span><span>Pro</span></label>
+        <label class="radio-item"><span class="radio-circle"></span><span>Enterprise</span></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="lbl">Memory limit <span style="font-weight:400;color:var(--neutral-500)">— 512 MB</span></label>
+    <div class="slider-wrap">
+      <div class="slider-track">
+        <div class="slider-fill" style="width:40%"></div>
+        <div class="slider-thumb" style="left:calc(40% - 8px)"></div>
+      </div>
+    </div>
+    <div class="row" style="justify-content:space-between">
+      <span class="hint">128 MB</span>
+      <span class="hint">2 GB</span>
+    </div>
+  </div>
+
+</div>
+</body></html>
