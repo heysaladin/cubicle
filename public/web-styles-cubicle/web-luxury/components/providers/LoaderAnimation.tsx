@@ -9,6 +9,8 @@ export default function LoaderAnimation() {
 
     function initLoader() {
 
+      console.log('AW AW AW')
+
       const tl = gsap.timeline()
 
       tl.set('html', {
@@ -44,11 +46,8 @@ export default function LoaderAnimation() {
 
     }
 
-    window.addEventListener('load', initLoader)
-
-    return () => {
-      window.removeEventListener('load', initLoader)
-    }
+    // RUN DIRECTLY
+    initLoader()
 
   }, [])
 
