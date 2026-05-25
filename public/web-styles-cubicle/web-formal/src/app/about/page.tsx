@@ -7,21 +7,21 @@ import { CtaSection } from '@/components/sections/CtaSection'
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about Bestra — our mission, values, and the team behind your results.',
+  description: 'Learn about [Company] — our mission, values, and the team behind your results.',
 }
 
 export default function AboutPage() {
   return (
     <>
       <InnerBanner
-        label="About Bestra"
+        label="About [Company]"
         title="Solving problems with innovations."
         description="A proficient team of highly skilled and experienced consultants offering detailed analyses, strategic guidance, and impactful business solutions."
       />
       <StatsSection />
       <RationaleCards
-        label="About Bestra"
-        title="Bestra is a business-focused team dedicated to helping companies grow with clarity, confidence, and purpose"
+        label="About [Company]"
+        title="[Company] is a business-focused team dedicated to helping companies grow with clarity, confidence, and purpose"
         cards={[
           {
             title: 'Our mission',

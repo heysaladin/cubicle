@@ -48,7 +48,7 @@ export function TeamGrid({
                 {member.imageSrc ? (
                   <Image src={member.imageSrc} alt={member.name} fill className="object-cover" />
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-b from-light-gray to-bestra-gray" />
+                  <div className="w-full h-full bg-gradient-to-b from-light-gray to-divider-gray" />
                 )}
               </div>
               <div className="flex flex-col gap-s">

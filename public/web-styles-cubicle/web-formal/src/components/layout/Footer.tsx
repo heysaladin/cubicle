@@ -1,114 +1,168 @@
-import Link from 'next/link'
-
-const footerColumns = [
-  {
-    title: 'Company',
-    links: [
-      { label: 'Home',                  href: '/' },
-      { label: 'About Us',              href: '/about' },
-      { label: 'Solutions',             href: '/solutions' },
-      { label: 'Strategic Direction',   href: '/solutions' },
-      { label: 'Operational Execution', href: '/solutions' },
-      { label: 'Growth Optimization',   href: '/solutions' },
-    ],
-  },
-  {
-    title: 'Resources',
-    links: [
-      { label: 'Case Studies', href: '/case-studies' },
-      { label: 'FAQ',          href: '/faq' },
-      { label: 'Blog',         href: '/blog' },
-    ],
-  },
-]
-
-const socialLinks = [
-  { label: 'YouTube',           href: '#' },
-  { label: 'Instagram',         href: '#' },
-  { label: 'Webflow Templates', href: '#' },
-]
-
-const legalLinks = [
-  { label: 'Licensing', href: '/licensing' },
-]
-
 export function Footer() {
   return (
-    <footer className="pt-[7xl] pb-[3xl] bg-white border-t border-bestra-gray">
-      <div className="base-container">
+    <div className="footer without-top-space">
+      <div className="w-layout-blockcontainer base-container w-container">
+        <div className="footer-with-line-wrapper">
 
-        {/* Main grid */}
-        <div className="flex flex-col md:flex-row justify-between gap-[5xl] mb-[5xl]">
+          <div
+            className="line-grey"
+            style={{ opacity: 1, translate: 'none', rotate: 'none', scale: 'none', transform: 'translate3d(0px, 0px, 0px)' } as React.CSSProperties}
+          ></div>
 
-          {/* Brand col */}
-          <div className="flex flex-col gap-[3xl] max-w-[280px]">
-            <Link href="/" className="text-h3 font-medium tracking-tightest text-black leading-[1.1em]">
-              Bestra
-            </Link>
-            <p className="text-primary text-text-body leading-[1.2em] font-medium">
-              Business, the bestra way.
-            </p>
-            <div className="flex gap-l">
-              {socialLinks.map((s) => (
-                <Link key={s.label} href={s.href} className="text-primary text-text-body hover:text-near-black transition-colors duration-350">
-                  {s.label}
-                </Link>
-              ))}
-            </div>
-          </div>
+          <div className="footer-wrapper">
 
-          {/* Link columns */}
-          <div className="flex flex-wrap gap-[5xl]">
-            {footerColumns.map((col) => (
-              <div key={col.title} className="flex flex-col gap-l min-w-[140px]">
-                <span className="text-text-body font-medium text-primary leading-[1.2em]">{col.title}</span>
-                <div className="flex flex-col gap-l">
-                  {col.links.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="text-text-body text-primary font-normal hover:text-near-black transition-colors duration-350"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
+            {/* Brand + CTA */}
+            <div className="footer-brand-wrapper">
+              <div className="footer-logo-wrapper">
+                <div className="brand-footer-wrap slide-up">
+                  <div className="footer-brand-info-wrapper">
+                    <a href="/" aria-current="page" className="footer-brand w-nav-brand w--current">
+                      <img
+                        loading="lazy"
+                        height={30}
+                        alt="logo"
+                        src="https://cdn.prod.website-files.com/696cc4e0c2f7faf82e9fbb10/696cc4e0c2f7faf82e9fbb1f_2065dd17b63a50bc47a8fc58ae3fd5d9_LOGO.svg"
+                        className="footer-logo"
+                      />
+                    </a>
+                    <div>
+                      <div className="footer-brand-description">Business, the [company] way.</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="slide-up">
+                  <a href="/contact-us" className="primary-button button-dark w-inline-block">
+                    <div className="link-content-wrapper">
+                      <div
+                        className="arrow-wrapper-before"
+                        style={{ transform: 'translate3d(0rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)', transformStyle: 'preserve-3d' }}
+                      >
+                        <img
+                          src="https://cdn.prod.website-files.com/696cc4e0c2f7faf82e9fbb10/69724dc1a5a8992137ccd9e5_Arrow%20Icon%20White.svg"
+                          loading="lazy"
+                          alt="SVG"
+                          className="arrow-icon"
+                        />
+                      </div>
+                      <div
+                        className="button-text"
+                        style={{ transform: 'translate3d(0rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)', transformStyle: 'preserve-3d' }}
+                      >Contact us</div>
+                      <div
+                        className="arrow-wrapper"
+                        style={{ transform: 'translate3d(0rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)', transformStyle: 'preserve-3d' }}
+                      >
+                        <img
+                          src="https://cdn.prod.website-files.com/696cc4e0c2f7faf82e9fbb10/69724dc1a5a8992137ccd9e5_Arrow%20Icon%20White.svg"
+                          loading="lazy"
+                          width={20}
+                          height={20}
+                          alt="SVG"
+                          className="arrow-icon"
+                        />
+                      </div>
+                    </div>
+                  </a>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
 
-          {/* CTA card */}
-          <div className="border border-bestra-gray rounded-m p-[3xl] flex flex-col gap-[2xl] max-w-[230px] self-start">
-            <p className="text-h5 font-medium tracking-tightest leading-[1.2em] text-black">
-              Let's grow up your business
-            </p>
-            <Link href="/contact" className="text-primary text-text-body font-medium hover:text-near-black transition-colors duration-350">
-              Contact us →
-            </Link>
+            {/* Link columns */}
+            <div className="footer-columns-wrapper">
+
+              {/* Company */}
+              <div className="footer-links-wrapper slide-up">
+                <div className="footer-intro-title">Company</div>
+                <div className="links-column">
+                  <a href="/" aria-current="page" className="footer-link w--current">Home</a>
+                  <a href="/about-us" className="footer-link">About Us</a>
+                  <a href="/contact-us" className="footer-link">Join Us</a>
+                </div>
+              </div>
+
+              {/* Solutions */}
+              <div className="footer-links-wrapper slide-up">
+                <div className="footer-intro-title">Solutions</div>
+                <div className="footer-links-list-wrapper w-dyn-list">
+                  <div role="list" className="links-column w-dyn-items">
+                    <div role="listitem" className="footer-link-item w-dyn-item">
+                      <a href="/solutions/strategic-direction" className="footer-link">Strategic Direction</a>
+                    </div>
+                    <div role="listitem" className="footer-link-item w-dyn-item">
+                      <a href="/solutions/operational-execution" className="footer-link">Operational Execution</a>
+                    </div>
+                    <div role="listitem" className="footer-link-item w-dyn-item">
+                      <a href="/solutions/growth-optimization" className="footer-link">Growth Optimization</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Resources */}
+              <div className="footer-links-wrapper slide-up">
+                <div className="footer-intro-title">Resources</div>
+                <div className="links-column">
+                  <a href="/case-studies" className="footer-link">Case Studies</a>
+                  <a href="/faq" className="footer-link">FAQ</a>
+                  <a href="/blog" className="footer-link">Blog</a>
+                </div>
+              </div>
+
+              {/* Blog card */}
+              <div className="footer-links-list-wrapper slide-up w-dyn-list">
+                <div role="list" className="footer-blog-item w-dyn-items">
+                  <div role="listitem" className="footer-blog-item w-dyn-item">
+                    <div className="footer-link-blog-wrapper">
+                      <a href="/blog-posts/decision-making" className="footer-card-wrapper w-inline-block">
+                        <div className="footer-card-info-wrapper">
+                          <div className="footer-blog-title">March 12, 2026</div>
+                          <div className="footer-blog-title-wrap">
+                            <div className="footer-title-card">Decision Making</div>
+                            <div>
+                              <p className="footer-card-description">Growth comes from doing the right things consistently.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="plus-button-wrapper">
+                          <div className="plus-line"></div>
+                          <div className="plus-line horizontal"></div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="line-grey mb-[3xl]" />
-        <div className="flex flex-wrap items-center justify-between gap-l">
-          <div className="flex items-center gap-xs text-primary text-text-body">
-            <span>© {new Date().getFullYear()} Bestra.</span>
-            <span>All rights reserved.</span>
+        <div className="footer-bottom-wrapper">
+          <div className="footer-left-column-wrap">
+            <div className="footer-rights right-tablet">
+              © [Company]. All Rights Reserved.{' '}
+              <a href="/templates/licensing" className="footer-rights-link">Licensing</a>
+            </div>
+            <div className="footer-social-links-wrapper">
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" className="footer-social-link">YouTube</a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="footer-social-link">Instagram</a>
+            </div>
           </div>
-          <div className="flex items-center gap-l">
-            {legalLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-primary text-text-body font-normal hover:text-near-black transition-colors duration-350"
-              >
-                {link.label}
-              </Link>
-            ))}
+          <div className="footer-rights-wrapper">
+            <div className="footer-rights">
+              <a href="https://www.128.digital/webflow-templates" target="_blank" rel="noopener noreferrer" className="footer-rights-link">Webflow Templates</a>
+              {' '}by{' '}
+              <a href="https://www.128.digital/" target="_blank" rel="noopener noreferrer" className="footer-rights-link">128.digital. </a>
+            </div>
+            <div className="footer-rights">
+              Powered by{' '}
+              <a href="https://webflow.com/" target="_blank" rel="noopener noreferrer" className="footer-rights-link">Webflow</a>
+            </div>
           </div>
         </div>
 
       </div>
-    </footer>
+    </div>
   )
 }

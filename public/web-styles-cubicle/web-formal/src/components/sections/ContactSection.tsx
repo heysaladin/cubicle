@@ -46,28 +46,28 @@ export function ContactSection({ links = defaultLinks }: ContactSectionProps) {
                   <div className="flex flex-col gap-m">
                     <label className="text-text-body font-medium text-near-black" htmlFor="firstName">First name</label>
                     <input id="firstName" type="text" required placeholder="James"
-                      className="h-auto px-5 py-3 border border-bestra-gray rounded-s text-text-body text-near-black placeholder:text-primary/50 focus:outline-none focus:border-primary transition-colors duration-350" />
+                      className="h-auto px-5 py-3 border border-divider-gray rounded-s text-text-body text-near-black placeholder:text-primary/50 focus:outline-none focus:border-primary transition-colors duration-350" />
                   </div>
                   <div className="flex flex-col gap-m">
                     <label className="text-text-body font-medium text-near-black" htmlFor="lastName">Last name</label>
                     <input id="lastName" type="text" required placeholder="Whitfield"
-                      className="h-auto px-5 py-3 border border-bestra-gray rounded-s text-text-body text-near-black placeholder:text-primary/50 focus:outline-none focus:border-primary transition-colors duration-350" />
+                      className="h-auto px-5 py-3 border border-divider-gray rounded-s text-text-body text-near-black placeholder:text-primary/50 focus:outline-none focus:border-primary transition-colors duration-350" />
                   </div>
                 </div>
                 <div className="flex flex-col gap-m">
                   <label className="text-text-body font-medium text-near-black" htmlFor="email">Work email</label>
                   <input id="email" type="email" required placeholder="james@company.com"
-                    className="h-auto px-5 py-3 border border-bestra-gray rounded-s text-text-body text-near-black placeholder:text-primary/50 focus:outline-none focus:border-primary transition-colors duration-350" />
+                    className="h-auto px-5 py-3 border border-divider-gray rounded-s text-text-body text-near-black placeholder:text-primary/50 focus:outline-none focus:border-primary transition-colors duration-350" />
                 </div>
                 <div className="flex flex-col gap-m">
                   <label className="text-text-body font-medium text-near-black" htmlFor="company">Company</label>
                   <input id="company" type="text" placeholder="Company name"
-                    className="h-auto px-5 py-3 border border-bestra-gray rounded-s text-text-body text-near-black placeholder:text-primary/50 focus:outline-none focus:border-primary transition-colors duration-350" />
+                    className="h-auto px-5 py-3 border border-divider-gray rounded-s text-text-body text-near-black placeholder:text-primary/50 focus:outline-none focus:border-primary transition-colors duration-350" />
                 </div>
                 <div className="flex flex-col gap-m">
                   <label className="text-text-body font-medium text-near-black" htmlFor="message">What's on your mind?</label>
                   <textarea id="message" required rows={5} placeholder="Tell us about your challenge..."
-                    className="px-5 py-3 border border-bestra-gray rounded-s text-text-body text-near-black placeholder:text-primary/50 focus:outline-none focus:border-primary transition-colors duration-350 resize-none" />
+                    className="px-5 py-3 border border-divider-gray rounded-s text-text-body text-near-black placeholder:text-primary/50 focus:outline-none focus:border-primary transition-colors duration-350 resize-none" />
                 </div>
                 <Button type="submit" variant="primary" className="self-start">Send message</Button>
               </form>

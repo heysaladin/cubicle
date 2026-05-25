@@ -17,14 +17,18 @@ const primaryLinks = [
 ]
 
 const secondaryLinksCol1 = [
-  { label: 'About Damai', href: '/about' },
-  { label: 'Gallery', href: '/gallery' },
-  { label: 'News & Events', href: '/news' },
+  { label: 'Garden Villa', href: '/stay/garden-villa' },
+  { label: 'Pool Villa', href: '/stay/pool-villa' },
+  { label: 'Luxury Pool Villa', href: '/stay/luxury-pool-villa' },
+  { label: 'Two Bedroom Pool Villa', href: '/stay/two-bedroom-pool-villa' },
 ]
 
 const secondaryLinksCol2 = [
-  { label: 'Contact', href: '/contact' },
-  { label: 'FAQ', href: '/faq' },
+  { label: 'Secret Waterfalls', href: '/discover/secret-waterfalls' },
+  { label: 'Dolphins of Lovina', href: '/discover/dolphins-of-lovina' },
+  { label: 'Diving and Snorkling', href: '/discover/diving-and-snorkling' },
+  { label: 'Golf in the Volcano', href: '/discover/golf-in-the-volcano' },
+  { label: 'North Bali', href: '/discover/north-bali' },
 ]
 
 export default function SideNav({ isOpen, onClose }: SideNavProps) {
@@ -84,7 +88,7 @@ export default function SideNav({ isOpen, onClose }: SideNavProps) {
           <div className="row row-links-secondary">
             <div className="col">
               <div className="col-row-eyebrow">
-                <span className="eyebrow">Explore</span>
+                <span className="eyebrow">Stay</span>
               </div>
               <ul>
                 {secondaryLinksCol1.map((link) => (
@@ -100,7 +104,7 @@ export default function SideNav({ isOpen, onClose }: SideNavProps) {
             </div>
             <div className="col">
               <div className="col-row-eyebrow">
-                <span className="eyebrow">Info</span>
+                <span className="eyebrow">Discover</span>
               </div>
               <ul>
                 {secondaryLinksCol2.map((link) => (
@@ -114,10 +118,10 @@ export default function SideNav({ isOpen, onClose }: SideNavProps) {
                 ))}
               </ul>
               <div className="col-row-more-link">
-                <a href="tel:+62123456789" className="link small">
-                  <div className="link-click">
-                    <span>+62 123 456 789</span>
-                  </div>
+                <a href="tel:+6287788841008" className="link small">
+                  <span className="link-click">
+                    <span>+62 877 888 41008</span>
+                  </span>
                 </a>
               </div>
             </div>
@@ -128,7 +132,7 @@ export default function SideNav({ isOpen, onClose }: SideNavProps) {
             <div className="col">
               <div className="col-row-rating">
                 <div className="tripadvisor-stats">
-                  <div className="reviews-stars" data-tripadvisor-stars="bubble_45">
+                  <div className="reviews-stars" data-tripadvisor-stars="bubble_50">
                     {[1,2,3,4,5].map((i) => (
                       <svg key={i} viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
                         <polygon points="7,1 9,5 13,5.5 10,8.5 10.8,13 7,11 3.2,13 4,8.5 1,5.5 5,5" />
@@ -136,7 +140,7 @@ export default function SideNav({ isOpen, onClose }: SideNavProps) {
                     ))}
                   </div>
                   <div className="tripadvisor-text">
-                    <span className="tripadvisor-rating eyebrow">4.5</span>
+                    <span className="tripadvisor-rating eyebrow">5.0</span>
                     <span className="eyebrow inactive">/ 5 on TripAdvisor</span>
                   </div>
                 </div>

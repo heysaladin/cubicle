@@ -6,7 +6,7 @@ import { CtaSection } from '@/components/sections/CtaSection'
 
 export const metadata: Metadata = {
   title: 'Leadership Advisory',
-  description: 'Executive leadership development and advisory programs from Bestra.',
+  description: 'Executive leadership development and advisory programs from [Company].',
 }
 
 const leadershipServices = [

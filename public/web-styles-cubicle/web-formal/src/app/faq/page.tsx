@@ -6,7 +6,7 @@ import { CtaSection } from '@/components/sections/CtaSection'
 
 export const metadata: Metadata = {
   title: 'FAQ',
-  description: 'Answers to common questions about working with Bestra.',
+  description: 'Answers to common questions about working with [Company].',
 }
 
 export default function FaqPage() {

@@ -3,7 +3,7 @@ import { InnerBanner } from '@/components/sections/InnerBanner'
 
 export const metadata: Metadata = {
   title: 'Licensing',
-  description: 'Licensing terms for Bestra frameworks, tools, and intellectual property.',
+  description: 'Licensing terms for [Company] frameworks, tools, and intellectual property.',
 }
 
 export default function LicensingPage() {

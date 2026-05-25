@@ -5,7 +5,7 @@ import { CtaSection } from '@/components/sections/CtaSection'
 
 export const metadata: Metadata = {
   title: 'Our Team',
-  description: 'Meet the Bestra team — senior consultants and advisors dedicated to your success.',
+  description: 'Meet the [Company] team — senior consultants and advisors dedicated to your success.',
 }
 
 export default function OurTeamPage() {

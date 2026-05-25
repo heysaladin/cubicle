@@ -108,7 +108,7 @@ export function BlogSection({
           {/* Article list */}
           <div className="flex flex-col gap-[4xl] flex-1">
             {rest.map((post, i) => (
-              <Link key={i} href={post.href} className="group flex gap-[3xl] py-5 border-b border-bestra-gray last:border-b-0">
+              <Link key={i} href={post.href} className="group flex gap-[3xl] py-5 border-b border-divider-gray last:border-b-0">
                 {post.imageSrc && (
                   <div className="relative rounded-s overflow-hidden w-[35%] shrink-0">
                     <Image src={post.imageSrc} alt={post.imageAlt ?? ''} fill className="object-cover" />

@@ -5,7 +5,6 @@ import '@/styles/layout.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import LoadingScreen from '@/components/layout/LoadingScreen'
-import FloatingWhatsApp from '@/components/layout/FloatingWhatsApp'
 import CustomCursor from '@/components/layout/CustomCursor'
 import LenisProvider from '@/components/providers/LenisProvider'
 import BodyManager from '@/components/providers/BodyManager'
@@ -50,10 +49,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <header>
             <Navbar />
           </header>
-          <main className="main-wrap">{children}</main>
-          <Footer />
+          <main className="main" id="main">
+            <div className="main-wrap" id="main-wrap" data-scroll-container>
+              {children}
+              <Footer />
+            </div>
+          </main>
           <div className="floating-elements">
-            <FloatingWhatsApp phoneNumber="+62123456789" />
             <CustomCursor />
           </div>
         </LenisProvider>

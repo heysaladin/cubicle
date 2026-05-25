@@ -6,7 +6,7 @@ import { CtaSection } from '@/components/sections/CtaSection'
 
 export const metadata: Metadata = {
   title: 'Our Values',
-  description: 'The values and principles that guide every Bestra engagement.',
+  description: 'The values and principles that guide every [Company] engagement.',
 }
 
 export default function OurValuesPage() {

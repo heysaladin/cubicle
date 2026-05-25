@@ -24,14 +24,14 @@ const defaultCards: RationaleCard[] = [
     cta: { label: 'Learn more', href: '/about' },
   },
   {
-    title: 'We built Bestra to restore focus',
-    description: 'Bestra helps businesses turn strategy into steady progress. By simplifying complexity and creating clear direction, we help teams stay aligned, move with confidence, and build momentum that lasts.',
+    title: 'We built [Company] to restore focus',
+    description: '[Company] helps businesses turn strategy into steady progress. By simplifying complexity and creating clear direction, we help teams stay aligned, move with confidence, and build momentum that lasts.',
     cta: { label: 'Learn more', href: '/solutions' },
   },
 ]
 
 export function RationaleCards({
-  label = 'Why Bestra',
+  label = 'Why [Company]',
   title = 'Because good intentions aren\'t enough',
   cards = defaultCards,
 }: RationaleCardsProps) {

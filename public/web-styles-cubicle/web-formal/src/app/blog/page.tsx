@@ -4,7 +4,7 @@ import { BlogSection } from '@/components/sections/BlogSection'
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: 'Insights on strategy, leadership, and organizational performance from the Bestra team.',
+  description: 'Insights on strategy, leadership, and organizational performance from the [Company] team.',
 }
 
 export default function BlogPage() {

@@ -93,7 +93,7 @@ export function PricingCards({
                 'flex flex-col gap-[4xl] p-[3xl] rounded-m border',
                 tier.highlight
                   ? 'bg-black border-black text-white'
-                  : 'bg-soft-white border-bestra-gray',
+                  : 'bg-soft-white border-divider-gray',
               )}
             >
               <div className="flex flex-col gap-[2xl]">

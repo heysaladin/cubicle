@@ -18,8 +18,8 @@ interface HeroBannerProps {
 
 export function HeroBanner({
   label = 'Business Consulting',
-  title = 'Business, the bestra way',
-  description = 'Bestra streamlines operations and drives business growth.',
+  title = 'Business, the [company] way',
+  description = '[Company] streamlines operations and drives business growth.',
   primaryCta = { label: 'Discover our solutions', href: '/solutions' },
   secondaryCta = { label: 'Learn more', href: '/about' },
   stats = [

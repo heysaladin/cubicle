@@ -8,7 +8,7 @@ const config: Config = {
         primary: '#6f776e',
         'soft-white': '#fcfcf6',
         'light-gray': '#f3f3f2',
-        'bestra-gray': '#e6e6e6',
+        'divider-gray': '#e6e6e6',
         'dark-grey': '#dedede',
         stroke: '#474747',
         'link-hover': '#b3b3b3',

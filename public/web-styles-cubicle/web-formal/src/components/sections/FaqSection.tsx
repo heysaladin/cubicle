@@ -53,7 +53,7 @@ const defaultColumns: [FaqColumn, FaqColumn] = [
   {
     items: [
       {
-        question: 'Who gains the most from partnering with Bestra?',
+        question: 'Who gains the most from partnering with [Company]?',
         answer: 'Organizations facing growth, change, or strategic uncertainty benefit most — especially teams that value structured thinking and decisive execution.',
       },
       {
@@ -80,7 +80,7 @@ function FaqItemComponent({ item, isDark }: { item: FaqItem; isDark: boolean }) 
   const [open, setOpen] = useState(false)
 
   return (
-    <div className={`w-full pb-5 border-b ${isDark ? 'border-white/20' : 'border-bestra-gray'}`}>
+    <div className={`w-full pb-5 border-b ${isDark ? 'border-white/20' : 'border-divider-gray'}`}>
       <button
         className="w-full flex justify-between items-start gap-4 text-left"
         onClick={() => setOpen((v) => !v)}

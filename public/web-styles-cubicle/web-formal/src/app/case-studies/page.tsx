@@ -6,7 +6,7 @@ import { CtaSection } from '@/components/sections/CtaSection'
 
 export const metadata: Metadata = {
   title: 'Case Studies',
-  description: 'Real-world results from Bestra consulting engagements across industries.',
+  description: 'Real-world results from [Company] consulting engagements across industries.',
 }
 
 export default function CaseStudiesPage() {
