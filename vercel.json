@@ -1,5 +1,8 @@
 {
-  "buildCommand": "npm run build-storybook",
-  "outputDirectory": "storybook-static",
-  "framework": null
+  "buildCommand": "npm run build:site",
+  "outputDirectory": "dist",
+  "framework": null,
+  "rewrites": [
+    { "source": "/((?!dev/).*)", "destination": "/index.html" }
+  ]
 }
