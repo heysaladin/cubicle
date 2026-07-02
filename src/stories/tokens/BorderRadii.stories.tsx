@@ -44,7 +44,7 @@ export const OnComponents: Story = {
     <div className="flex flex-col gap-8 p-6 max-w-[640px]">
       <h2 className="text-lg font-semibold">Border Radius on Components</h2>
       <div className="flex flex-wrap gap-4">
-        {borderRadii.map(({ name, label, class: cls }) => (
+        {borderRadii.map(({ name, class: cls }) => (
           <div key={name} className="flex flex-col items-center gap-2">
             <button
               className={`px-4 py-2 bg-primary text-primary-foreground text-sm font-medium ${cls}`}
