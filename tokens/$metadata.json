@@ -1,3 +1,7 @@
 {
-  "tokenSetOrder": ["core", "semantic.light", "semantic.dark"]
+  "tokenSetOrder": [
+    "core",
+    "semantic.light",
+    "semantic.dark"
+  ]
 }

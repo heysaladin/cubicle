@@ -49,6 +49,10 @@ Split into:
 
 Edit either in Figma (via Tokens Studio's GitHub sync) or directly here. Run `npm run tokens:build` to regenerate platform outputs.
 
+**Tokens Studio sync (free plan, single-file):** the plugin syncs one file, `tokens/tokens.json`, which bundles all token sets plus `$themes`/`$metadata`. The split files remain the source for Style Dictionary. Keep them in sync with:
+- `npm run tokens:bundle` — after editing the split files by hand (regenerates `tokens.json`)
+- `npm run tokens:unbundle` — after a designer pushes from Figma (regenerates the split files)
+
 ### `cubicle-storybook/` (your existing repo)
 The **canonical DS codebase**. Holds:
 - All shadcn React components in `src/components/ui/`

@@ -11,6 +11,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "tokens:build": "style-dictionary build --config style-dictionary.config.mjs",
+    "tokens:bundle": "node scripts/tokens-sync.mjs bundle",
+    "tokens:unbundle": "node scripts/tokens-sync.mjs unbundle",
     "tokens:watch": "style-dictionary build --config style-dictionary.config.mjs --watch",
     "tokens:clean": "rm -rf build"
   },
