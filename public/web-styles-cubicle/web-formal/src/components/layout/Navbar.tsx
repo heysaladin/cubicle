@@ -42,7 +42,7 @@ export function Navbar() {
         <a href="/" aria-current="page"
           className={`nav-link w-nav-link w--current${menuOpen ? ' w--nav-link-open' : ''}`}
           style={{ maxWidth: '1280px' }}>Home</a>
-        <a href="/about-us"
+        <a href="/about"
           className={`nav-link w-nav-link${menuOpen ? ' w--nav-link-open' : ''}`}
           style={{ maxWidth: '1280px' }}>About</a>
         <a href="/solutions"
@@ -78,13 +78,13 @@ export function Navbar() {
             <div className="nav-dropdown-column">
               <div className="nav-dropdown-link-wrapper">
                 <a href="/" aria-current="page" className="nav-dropdown-link w-dropdown-link w--current" tabIndex={0}><span className="nav-dropdown-span"> </span>Home</a>
-                <a href="/about-us" className="nav-dropdown-link w-dropdown-link" tabIndex={0}><span className="nav-dropdown-span"> </span>About us</a>
+                <a href="/about" className="nav-dropdown-link w-dropdown-link" tabIndex={0}><span className="nav-dropdown-span"> </span>About us</a>
                 <a href="/our-values" className="nav-dropdown-link w-dropdown-link" tabIndex={0}><span className="nav-dropdown-span"> </span>Our Values</a>
                 <a href="/solutions" className="nav-dropdown-link w-dropdown-link" tabIndex={0}><span className="nav-dropdown-span"> </span>Solutions</a>
                 <div className="nav-collection-list-wrapper w-dyn-list">
                   <div role="list" className="nav-collection-list w-dyn-items">
                     <div role="listitem" className="nav-collection-item w-dyn-item">
-                      <a href="/solutions/leadership-advisory" className="nav-dropdown-link w-dropdown-link" tabIndex={0}><span className="nav-dropdown-span"> </span>Solutions Details</a>
+                      <a href="/leadership-advisory" className="nav-dropdown-link w-dropdown-link" tabIndex={0}><span className="nav-dropdown-span"> </span>Solutions Details</a>
                     </div>
                   </div>
                 </div>
@@ -104,7 +104,7 @@ export function Navbar() {
                 <div className="nav-collection-list-wrapper w-dyn-list">
                   <div role="list" className="nav-collection-list w-dyn-items">
                     <div role="listitem" className="nav-collection-item w-dyn-item">
-                      <a href="/case-studies/decision-clarity" className="nav-dropdown-link w-dropdown-link" tabIndex={0}><span className="nav-dropdown-span"> </span>Case Studies Details</a>
+                      <a href="/decision-clarity" className="nav-dropdown-link w-dropdown-link" tabIndex={0}><span className="nav-dropdown-span"> </span>Case Studies Details</a>
                     </div>
                   </div>
                 </div>
@@ -112,18 +112,18 @@ export function Navbar() {
                 <div className="nav-collection-list-wrapper w-dyn-list">
                   <div role="list" className="nav-collection-list w-dyn-items">
                     <div role="listitem" className="nav-collection-item w-dyn-item">
-                      <a href="/blog-posts/rethinking-decision-making" className="nav-dropdown-link w-dropdown-link" tabIndex={0}><span className="nav-dropdown-span"> </span>Blog Details</a>
+                      <a href="/rethinking-decision-making" className="nav-dropdown-link w-dropdown-link" tabIndex={0}><span className="nav-dropdown-span"> </span>Blog Details</a>
                     </div>
                   </div>
                 </div>
-                <a href="/contact-us" className="nav-dropdown-link w-dropdown-link" tabIndex={0}><span className="nav-dropdown-span"> </span>Contact Us</a>
+                <a href="/contact" className="nav-dropdown-link w-dropdown-link" tabIndex={0}><span className="nav-dropdown-span"> </span>Contact Us</a>
               </div>
             </div>
           </nav>
         </div>
 
         <div className="nav-button-tablet">
-          <a href="/contact-us" className="primary-button w-button">Let&apos;s talk</a>
+          <a href="/contact" className="primary-button w-button">Let&apos;s talk</a>
         </div>
       </div>
     </>
@@ -157,7 +157,7 @@ export function Navbar() {
             </nav>
 
             <div className="nav-button-wrap">
-              <a href="/contact-us" className="primary-button header-button w-button">Let&apos;s talk</a>
+              <a href="/contact" className="primary-button header-button w-button">Let&apos;s talk</a>
             </div>
 
             <div

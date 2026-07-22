@@ -14,12 +14,59 @@ const componentPages = Object.fromEntries(
   ).map(([path, loader]) => [path.match(/\/([^/]+)\.tsx$/)![1], lazy(loader)]),
 );
 
+const webappComponentPages = Object.fromEntries(
+  Object.entries(
+    import.meta.glob<{ default: ComponentType }>('./docs/pages/webapp/*.tsx'),
+  ).map(([path, loader]) => [path.match(/\/([^/]+)\.tsx$/)![1], lazy(loader)]),
+);
+
+const webappPagePages = Object.fromEntries(
+  Object.entries(
+    import.meta.glob<{ default: ComponentType }>('./docs/pages/webapp/pages/*.tsx'),
+  ).map(([path, loader]) => [path.match(/\/([^/]+)\.tsx$/)![1], lazy(loader)]),
+);
+
+const websiteComponentPages = Object.fromEntries(
+  Object.entries(
+    import.meta.glob<{ default: ComponentType }>('./docs/pages/website/*.tsx'),
+  ).map(([path, loader]) => [path.match(/\/([^/]+)\.tsx$/)![1], lazy(loader)]),
+);
+
+const websitePagePages = Object.fromEntries(
+  Object.entries(
+    import.meta.glob<{ default: ComponentType }>('./docs/pages/website/pages/*.tsx'),
+  ).map(([path, loader]) => [path.match(/\/([^/]+)\.tsx$/)![1], lazy(loader)]),
+);
+
+const mobileappComponentPages = Object.fromEntries(
+  Object.entries(
+    import.meta.glob<{ default: ComponentType }>('./docs/pages/mobileapp/*.tsx'),
+  ).map(([path, loader]) => [path.match(/\/([^/]+)\.tsx$/)![1], lazy(loader)]),
+);
+
+const mobileappScreenPages = Object.fromEntries(
+  Object.entries(
+    import.meta.glob<{ default: ComponentType }>('./docs/pages/mobileapp/screens/*.tsx'),
+  ).map(([path, loader]) => [path.match(/\/([^/]+)\.tsx$/)![1], lazy(loader)]),
+);
+
 function ComponentDocRoute() {
   const { slug } = useParams();
   const Page = slug ? componentPages[slug] : undefined;
 
   if (!Page) return <NotFound />;
 
+  return (
+    <Suspense fallback={null}>
+      <Page />
+    </Suspense>
+  );
+}
+
+function GlobRoute({ pages }: { pages: Record<string, ComponentType> }) {
+  const { slug } = useParams();
+  const Page = slug ? pages[slug] : undefined;
+  if (!Page) return <NotFound />;
   return (
     <Suspense fallback={null}>
       <Page />
@@ -56,6 +103,12 @@ export default function App() {
           <Route path="/docs/installation" element={<Installation />} />
           <Route path="/docs/tokens" element={<Tokens />} />
           <Route path="/docs/components/:slug" element={<ComponentDocRoute />} />
+          <Route path="/docs/webapp/pages/:slug" element={<GlobRoute pages={webappPagePages} />} />
+          <Route path="/docs/webapp/:slug" element={<GlobRoute pages={webappComponentPages} />} />
+          <Route path="/docs/website/pages/:slug" element={<GlobRoute pages={websitePagePages} />} />
+          <Route path="/docs/website/:slug" element={<GlobRoute pages={websiteComponentPages} />} />
+          <Route path="/docs/mobileapp/screens/:slug" element={<GlobRoute pages={mobileappScreenPages} />} />
+          <Route path="/docs/mobileapp/:slug" element={<GlobRoute pages={mobileappComponentPages} />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

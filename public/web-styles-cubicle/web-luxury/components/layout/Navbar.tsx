@@ -3,39 +3,8 @@
 import { useState } from 'react'
 import { WordmarkSVG } from './LoadingScreen'
 import SideNav from './SideNav'
-
-const villaLinks = [
-  ['Garden Villa', 'https://thedamai.com/stay/garden-villa'],
-  ['Pool Villa', 'https://thedamai.com/stay/pool-villa'],
-  ['Luxury Pool Villa', 'https://thedamai.com/stay/luxury-pool-villa'],
-  ['Two Bedroom Pool Villa', 'https://thedamai.com/stay/two-bedroom-pool-villa'],
-]
-
-const discoverLinks = [
-  ['Secret Waterfalls', 'https://thedamai.com/discover/secret-waterfalls'],
-  ['Dolphins of Lovina', 'https://thedamai.com/discover/dolphins-of-lovina'],
-  ['Diving and Snorkling', 'https://thedamai.com/discover/diving-and-snorkling'],
-  ['Golf in the Volcano', 'https://thedamai.com/discover/golf-in-the-volcano'],
-  ['North Bali', 'https://thedamai.com/discover/north-bali'],
-]
-
-const primaryLinks = [
-  ['Stay', 'https://thedamai.com/stay'],
-  ['Dining', 'https://thedamai.com/dining'],
-  ['Relax', 'https://thedamai.com/relax'],
-  ['Discover', 'https://thedamai.com/discover'],
-  ['Packages', 'https://thedamai.com/packages'],
-]
-
-function Dots() {
-  return (
-    <div className="dots">
-      <div className="dot"></div>
-      <div className="dot"></div>
-      <div className="dot"></div>
-    </div>
-  )
-}
+import Dots from '@/components/ui/Dots'
+import { primaryLinks, villaLinks, discoverLinks, baseUrl } from '@/lib/data/navigation'
 
 function DropdownNavLink({
   label,
@@ -44,7 +13,7 @@ function DropdownNavLink({
 }: {
   label: string
   modifier: string
-  links: string[][]
+  links: { label: string; href: string }[]
 }) {
   return (
     <div className={`nav-link nav-link-absolute ${modifier}`}>
@@ -56,9 +25,9 @@ function DropdownNavLink({
       </div>
       <div className="nav-link-dropdown">
         <ul className="nav-link-dropdown-inner">
-          {links.map(([text, href]) => (
+          {links.map(({ label: text, href }) => (
             <li className="link" data-barba-update="" data-link-status="not-active" key={href}>
-              <a className="link-click" href={href}>
+              <a className="link-click" href={`${baseUrl}${href}`}>
                 <span>{text}</span>
               </a>
             </li>
@@ -90,7 +59,7 @@ export default function Navbar() {
         <div className="border-bottom"></div>
         <div className="row nav-bar-scrolled-height">
           <div className="logo">
-            <a href="https://thedamai.com" className="logo-click" aria-label="The Damai home">
+            <a href={baseUrl} className="logo-click" aria-label="The Damai home">
               <WordmarkSVG />
             </a>
           </div>
@@ -115,9 +84,9 @@ export default function Navbar() {
             <ul className="nav-link-ul" data-barba-update="" data-link-status="dropdown-not-active">
               <DropdownNavLink label="Other villas" modifier="nav-link-absolute-stay" links={villaLinks} />
               <DropdownNavLink label="Discover" modifier="nav-link-absolute-discover" links={discoverLinks} />
-              {primaryLinks.map(([text, href]) => (
+              {primaryLinks.map(({ label: text, href }) => (
                 <li className="nav-link nav-link-relative" data-barba-update="" data-link-status="not-active" key={href}>
-                  <a className="nav-link-click" href={href}>
+                  <a className="nav-link-click" href={`${baseUrl}${href}`}>
                     <div className="nav-link-content">
                       <span>{text}</span>
                     </div>

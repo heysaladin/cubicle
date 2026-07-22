@@ -7,19 +7,6 @@ export default function Page() {
     <>
       <LoaderAnimation />
 
- <div className="loading-screen">
-
-        <div className="loading-logo">
-
-          LOGO
-
-        </div>
-
-      </div>
-
-      <div className="transition-screen" />
-
-
 <section className="section default-header section-home-header" data-theme-section="dark" data-bg-section="transparent">   
    <div className="background-media overlay">
             <figure className="overlay">
