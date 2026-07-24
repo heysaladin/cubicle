@@ -1,11 +1,41 @@
+'use client';
+
+import * as React from 'react';
+import { LayoutDashboard, Users, BarChart3, Settings, Bell } from 'lucide-react';
 import { DocPage, DocSection } from '../../components/DocPage';
 import { ComponentPreview } from '../../components/ComponentPreview';
+import { AppLayout } from '@/components/webapp/AppLayout';
 import { PageHeader } from '@/components/webapp/PageHeader';
 import { ContentShell } from '@/components/webapp/ContentShell';
 import { SplitPanel } from '@/components/webapp/SplitPanel';
 import { NavBreadcrumb } from '@/components/webapp/NavBreadcrumb';
 import { Button } from '@/components/ui/button';
 import { Plus } from 'lucide-react';
+
+const APP_NAV = [
+  { label: 'Dashboard', icon: <LayoutDashboard className="size-4" />, href: '#', active: true },
+  { label: 'Users', icon: <Users className="size-4" />, href: '#' },
+  { label: 'Analytics', icon: <BarChart3 className="size-4" />, href: '#' },
+  { label: 'Notifications', icon: <Bell className="size-4" />, href: '#' },
+  { label: 'Settings', icon: <Settings className="size-4" />, href: '#' },
+];
+
+const appLayoutCode = `import { AppLayout } from '@/components/webapp/AppLayout';
+import { LayoutDashboard, Users, Settings } from 'lucide-react';
+
+const navItems = [
+  { label: 'Dashboard', icon: <LayoutDashboard className="size-4" />, href: '#', active: true },
+  { label: 'Users', icon: <Users className="size-4" />, href: '#' },
+  { label: 'Settings', icon: <Settings className="size-4" />, href: '#' },
+];
+
+export function Demo() {
+  return (
+    <AppLayout navItems={navItems}>
+      <p className="text-sm text-muted-foreground">Main content area</p>
+    </AppLayout>
+  );
+}`;
 
 const pageHeaderCode = `import { PageHeader } from '@/components/webapp/PageHeader';
 import { NavBreadcrumb } from '@/components/webapp/NavBreadcrumb';
@@ -65,6 +95,19 @@ export default function Page() {
       title="WebApp - Layout"
       description="Layout components and structural patterns for web applications."
     >
+      <DocSection title="AppLayout">
+        <ComponentPreview
+          code={appLayoutCode}
+          previewClassName="items-start p-0 overflow-hidden min-h-[400px]"
+        >
+          <div className="h-[400px] w-full border rounded-lg overflow-hidden">
+            <AppLayout navItems={APP_NAV}>
+              <p className="text-sm text-muted-foreground">Main content area</p>
+            </AppLayout>
+          </div>
+        </ComponentPreview>
+      </DocSection>
+
       <DocSection title="PageHeader">
         <ComponentPreview code={pageHeaderCode} previewClassName="items-start">
           <div className="w-full">

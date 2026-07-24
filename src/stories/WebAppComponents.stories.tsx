@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { LayoutDashboard, Users, BarChart3, Settings, Bell, FileText, Plus, Download, Trash2, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { AppLayout } from '@/components/webapp/AppLayout';
 import { AppSidebar } from '@/components/webapp/AppSidebar';
 import { TopNav } from '@/components/webapp/TopNav';
 import { NavBreadcrumb } from '@/components/webapp/NavBreadcrumb';
@@ -56,6 +57,25 @@ const meta: Meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
+export const AppLayoutStory: Story = {
+  name: 'AppLayout',
+  render: () => (
+    <div className="h-[500px] w-full border rounded-lg overflow-hidden">
+      <AppLayout
+        navItems={[
+          { label: 'Dashboard', icon: <LayoutDashboard className="size-4" />, href: '#', active: true },
+          { label: 'Users', icon: <Users className="size-4" />, href: '#' },
+          { label: 'Analytics', icon: <BarChart3 className="size-4" />, href: '#' },
+          { label: 'Notifications', icon: <Bell className="size-4" />, href: '#' },
+          { label: 'Settings', icon: <Settings className="size-4" />, href: '#' },
+        ]}
+      >
+        <p className="text-sm text-muted-foreground">Main content area</p>
+      </AppLayout>
+    </div>
+  ),
+};
 
 export const AppSidebarExpanded: Story = {
   name: 'AppSidebar — Expanded',
