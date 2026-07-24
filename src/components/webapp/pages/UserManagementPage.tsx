@@ -37,7 +37,7 @@ const ACTION_MENU_ITEMS = [
 
 export function UserManagementPage() {
   const [search, setSearch] = React.useState('');
-  const [activeFilter, setActiveFilter] = React.useState('all');
+  const [activeFilter, setActiveFilter] = React.useState<string[]>(['all']);
 
   return (
     <AppLayout navItems={NAV_ITEMS}>

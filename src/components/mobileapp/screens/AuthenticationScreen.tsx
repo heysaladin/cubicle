@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { PhoneFrame, PhoneScreen } from '@/components/mobileapp/PhoneFrame';
 import { MobileFormField } from '@/components/mobileapp/MobileFormField';
 import { Button } from '@/components/ui/button';

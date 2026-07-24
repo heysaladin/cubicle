@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { PhoneFrame, PhoneScreen } from '@/components/mobileapp/PhoneFrame';
 import { MobileTopBar } from '@/components/mobileapp/MobileTopBar';
 import { BottomNav } from '@/components/mobileapp/BottomNav';
@@ -9,7 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
   Home, Search, Bell, User, Edit3, Shield, Lock, CreditCard,
-  HelpCircle, LogOut, ChevronRight, Briefcase, Bell as BellIcon,
+  HelpCircle, LogOut, Briefcase, Bell as BellIcon,
 } from 'lucide-react';
 
 const navItems = [

@@ -6,7 +6,7 @@ import { ListItem, ListSection } from '@/components/mobileapp/ListItem';
 import { Switch } from '@/components/ui/switch';
 import {
   Home, Search, Bell, User, Mail, Smartphone, Moon, Globe,
-  Shield, Eye, EyeOff, Lock, Info, FileText, Star, ChevronRight,
+  Shield, Eye, EyeOff, Lock, Info, FileText, Star,
 } from 'lucide-react';
 
 const navItems = [

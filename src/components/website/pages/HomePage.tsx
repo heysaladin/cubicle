@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Zap, Shield, Globe, BarChart3, Users, Lock } from 'lucide-react';
 import { AnnouncementBanner } from '@/components/website/AnnouncementBanner';
 import { SiteHeader } from '@/components/website/SiteHeader';

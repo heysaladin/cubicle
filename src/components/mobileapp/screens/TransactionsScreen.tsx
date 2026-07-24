@@ -6,7 +6,7 @@ import { MobileCard } from '@/components/mobileapp/MobileCard';
 import { SegmentedControl } from '@/components/mobileapp/SegmentedControl';
 import { ListItem } from '@/components/mobileapp/ListItem';
 import { MiniSparkline } from '@/components/mobileapp/MiniSparkline';
-import { Home, Search, Bell, User, ArrowDownLeft, ArrowUpRight, CreditCard, Layers, Zap, ShoppingBag, Coffee } from 'lucide-react';
+import { Home, Bell, User, ArrowDownLeft, ArrowUpRight, CreditCard, Layers, Zap, ShoppingBag, Coffee } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [

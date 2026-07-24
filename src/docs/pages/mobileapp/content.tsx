@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import { DocPage, DocSection } from '../../components/DocPage';
 import { ComponentPreview } from '../../components/ComponentPreview';
 import { ListItem, ListSection } from '@/components/mobileapp/ListItem';
@@ -8,7 +7,7 @@ import { ActivityFeedItem } from '@/components/mobileapp/ActivityFeedItem';
 import { NotificationItem } from '@/components/mobileapp/NotificationItem';
 import { MobileCard, MobileStatCard } from '@/components/mobileapp/MobileCard';
 import {
-  User, Settings, CreditCard, Bell, Lock, HelpCircle,
+  User, Settings, CreditCard, Bell, Lock,
   Heart, MessageCircle, Share2, TrendingUp, TrendingDown, DollarSign, Users,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';

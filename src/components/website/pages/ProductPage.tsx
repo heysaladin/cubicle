@@ -1,8 +1,7 @@
-import * as React from 'react';
-import { Zap, Shield, Globe, BarChart3, Users, Lock, GitBranch, Layers, Bell, Code2 } from 'lucide-react';
+import { Zap, Globe, BarChart3, Users, Lock, GitBranch, Layers, Bell, Code2 } from 'lucide-react';
 import { SiteHeader } from '@/components/website/SiteHeader';
 import { HeroSection } from '@/components/website/HeroSection';
-import { FeatureGrid, FeatureCard } from '@/components/website/FeatureCard';
+import { FeatureGrid } from '@/components/website/FeatureCard';
 import { StatsBanner } from '@/components/website/StatsBanner';
 import { CTASection } from '@/components/website/CTASection';
 import { SiteFooter } from '@/components/website/SiteFooter';

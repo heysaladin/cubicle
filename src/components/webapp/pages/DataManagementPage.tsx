@@ -28,7 +28,7 @@ const FILTERS = [
 ];
 
 export function DataManagementPage() {
-  const [activeFilter, setActiveFilter] = React.useState('all');
+  const [activeFilter, setActiveFilter] = React.useState<string[]>(['all']);
   const [selectedCount, setSelectedCount] = React.useState(0);
 
   return (

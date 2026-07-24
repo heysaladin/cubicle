@@ -1,12 +1,11 @@
 'use client';
 
-import * as React from 'react';
 import { DocPage, DocSection } from '../../components/DocPage';
 import { ComponentPreview } from '../../components/ComponentPreview';
 import { ProgressRing } from '@/components/mobileapp/ProgressRing';
 import { MiniSparkline } from '@/components/mobileapp/MiniSparkline';
 import { MobileStatCard } from '@/components/mobileapp/MobileCard';
-import { TrendingUp, TrendingDown, DollarSign, Users, ShoppingCart, Activity } from 'lucide-react';
+import { DollarSign, Users, ShoppingCart, Activity } from 'lucide-react';
 
 const progressRingCode = `import { ProgressRing } from '@/components/mobileapp/ProgressRing';
 

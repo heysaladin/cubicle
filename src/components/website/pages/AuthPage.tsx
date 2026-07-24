@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { SiteHeader } from '@/components/website/SiteHeader';
-import { SiteFooter } from '@/components/website/SiteFooter';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
-import { cn } from '@/lib/utils';
 
 type AuthMode = 'signin' | 'signup' | 'forgot';
 

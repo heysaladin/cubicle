@@ -1,7 +1,7 @@
 import { Zap, Shield, Globe, BarChart3, Users, Lock } from 'lucide-react';
 import { DocPage, DocSection } from '../../components/DocPage';
 import { HeroSection } from '@/components/website/HeroSection';
-import { FeatureCard, FeatureGrid } from '@/components/website/FeatureCard';
+import { FeatureGrid } from '@/components/website/FeatureCard';
 import { TestimonialCard } from '@/components/website/TestimonialCard';
 import { StatsBanner } from '@/components/website/StatsBanner';
 import { CTASection } from '@/components/website/CTASection';

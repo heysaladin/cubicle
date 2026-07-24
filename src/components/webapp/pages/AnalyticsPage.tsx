@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import { LayoutDashboard, Users, BarChart3, Settings, Bell, FileText } from 'lucide-react';
 import { AppLayout } from '@/components/webapp/AppLayout';
 import { PageHeader } from '@/components/webapp/PageHeader';

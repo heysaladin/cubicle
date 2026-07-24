@@ -1,6 +1,5 @@
 import { DocPage, DocSection } from '../../components/DocPage';
 import { AnnouncementBanner } from '@/components/website/AnnouncementBanner';
-import { CookieBanner } from '@/components/website/CookieBanner';
 import { NewsletterForm } from '@/components/website/NewsletterForm';
 
 export default function Page() {

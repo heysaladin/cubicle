@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { MapPin, Clock, ArrowRight } from 'lucide-react';
 import { SiteHeader } from '@/components/website/SiteHeader';
 import { CTASection } from '@/components/website/CTASection';

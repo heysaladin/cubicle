@@ -1,10 +1,8 @@
-import * as React from 'react';
 import { PhoneFrame, PhoneScreen } from '@/components/mobileapp/PhoneFrame';
 import { MobileTopBar } from '@/components/mobileapp/MobileTopBar';
 import { BottomNav } from '@/components/mobileapp/BottomNav';
 import { MobileSearchBar } from '@/components/mobileapp/MobileSearchBar';
 import { ActivityFeedItem } from '@/components/mobileapp/ActivityFeedItem';
-import { ListItem } from '@/components/mobileapp/ListItem';
 import { Home, Search, Bell, User, Clock, Folder, FileText, Users } from 'lucide-react';
 
 const navItems = [

@@ -1,10 +1,7 @@
-import * as React from 'react';
 import { SiteHeader } from '@/components/website/SiteHeader';
 import { FAQAccordion } from '@/components/website/FAQAccordion';
-import { CTASection } from '@/components/website/CTASection';
 import { SiteFooter } from '@/components/website/SiteFooter';
-import { SectionWrapper, SectionHeading } from '@/components/website/SectionWrapper';
-import { NewsletterForm } from '@/components/website/NewsletterForm';
+import { SectionWrapper } from '@/components/website/SectionWrapper';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 

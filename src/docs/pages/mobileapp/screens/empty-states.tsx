@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import { DocPage, DocSection } from '../../../components/DocPage';
 import { ComponentPreview } from '../../../components/ComponentPreview';
 import { EmptyStatesScreen } from '@/components/mobileapp/screens/EmptyStatesScreen';

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { PhoneFrame, PhoneScreen } from '@/components/mobileapp/PhoneFrame';
 import { MobileTopBar } from '@/components/mobileapp/MobileTopBar';
 import { MobileEmptyState } from '@/components/mobileapp/MobileEmptyState';

@@ -1,13 +1,12 @@
 'use client';
 
-import * as React from 'react';
 import { DocPage, DocSection } from '../../components/DocPage';
 import { ComponentPreview } from '../../components/ComponentPreview';
 import { MobileEmptyState } from '@/components/mobileapp/MobileEmptyState';
 import { SwipeableRow } from '@/components/mobileapp/SwipeableRow';
 import { ListItem } from '@/components/mobileapp/ListItem';
 import {
-  Inbox, Search, FileX, WifiOff, ShoppingBag, Bell,
+  Inbox, Search, ShoppingBag, Bell,
   MessageCircle, User,
 } from 'lucide-react';
 

@@ -1,8 +1,7 @@
-import * as React from 'react';
 import { SiteHeader } from '@/components/website/SiteHeader';
 import { SiteFooter } from '@/components/website/SiteFooter';
 import { Button } from '@/components/ui/button';
-import { AlertTriangle, Construction, Clock, ServerCrash, Search } from 'lucide-react';
+import { Construction, Clock, ServerCrash, Search } from 'lucide-react';
 
 export function NotFoundPage() {
   return (

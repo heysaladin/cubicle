@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import { DocPage, DocSection } from '../../components/DocPage';
 import { ComponentPreview } from '../../components/ComponentPreview';
 import { MobileToast } from '@/components/mobileapp/MobileToast';
@@ -8,7 +7,6 @@ import { BottomSheet, ActionSheet } from '@/components/mobileapp/BottomSheet';
 import { SkeletonListItem, SkeletonCard, SkeletonText } from '@/components/mobileapp/SkeletonLoader';
 import { ListItem } from '@/components/mobileapp/ListItem';
 import { Share2, Download, Trash2, Edit3, Flag } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 const toastCode = `import { MobileToast } from '@/components/mobileapp/MobileToast';
 

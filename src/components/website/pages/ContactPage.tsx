@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Mail, MapPin, MessageCircle, Clock } from 'lucide-react';
 import { SiteHeader } from '@/components/website/SiteHeader';
 import { SiteFooter } from '@/components/website/SiteFooter';

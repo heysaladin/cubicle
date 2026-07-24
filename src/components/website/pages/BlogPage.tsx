@@ -1,8 +1,6 @@
-import * as React from 'react';
 import { SiteHeader } from '@/components/website/SiteHeader';
 import { BlogCard } from '@/components/website/BlogCard';
 import { NewsletterForm } from '@/components/website/NewsletterForm';
-import { CTASection } from '@/components/website/CTASection';
 import { SiteFooter } from '@/components/website/SiteFooter';
 import { SectionWrapper, SectionHeading } from '@/components/website/SectionWrapper';
 import { Badge } from '@/components/ui/badge';

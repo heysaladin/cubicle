@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { PhoneFrame } from '@/components/mobileapp/PhoneFrame';
 import { Button } from '@/components/ui/button';
 

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { SiteHeader } from '@/components/website/SiteHeader';
 import { TestimonialCard } from '@/components/website/TestimonialCard';
 import { StatsBanner } from '@/components/website/StatsBanner';

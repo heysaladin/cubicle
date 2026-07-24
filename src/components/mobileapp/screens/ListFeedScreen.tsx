@@ -7,7 +7,7 @@ import { SegmentedControl } from '@/components/mobileapp/SegmentedControl';
 import { ListItem } from '@/components/mobileapp/ListItem';
 import { SwipeableRow } from '@/components/mobileapp/SwipeableRow';
 import { Badge } from '@/components/ui/badge';
-import { Home, Search, Bell, User, CheckCircle2, Circle, Clock, AlertCircle } from 'lucide-react';
+import { Home, Bell, User, CheckCircle2, Circle } from 'lucide-react';
 
 const navItems = [
   { label: 'Home', icon: <Home /> },

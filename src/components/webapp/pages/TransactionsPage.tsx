@@ -27,7 +27,7 @@ const FILTERS = [
 ];
 
 export function TransactionsPage() {
-  const [activeFilter, setActiveFilter] = React.useState('all');
+  const [activeFilter, setActiveFilter] = React.useState<string[]>(['all']);
 
   return (
     <AppLayout navItems={NAV_ITEMS}>

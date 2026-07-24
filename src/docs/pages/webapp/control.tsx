@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import { Download, Plus, Trash2 } from 'lucide-react';
 import { DocPage, DocSection } from '../../components/DocPage';
 import { ComponentPreview } from '../../components/ComponentPreview';

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { CheckCircle2, AlertCircle, Info, XCircle, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 

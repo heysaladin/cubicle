@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import { SearchX, Wrench } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { EmptyState } from '@/components/webapp/EmptyState';

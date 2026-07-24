@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import { LayoutDashboard, Users, BarChart3, Settings, Bell } from 'lucide-react';
 import { DocPage, DocSection } from '../../components/DocPage';
 import { ComponentPreview } from '../../components/ComponentPreview';
